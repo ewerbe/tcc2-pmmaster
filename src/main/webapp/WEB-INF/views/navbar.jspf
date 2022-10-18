@@ -1,0 +1,50 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/home">PM Master Híbrido</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+<%--        <c:choose>--%>
+<%--            <c:when test="${colaborador!=null}">--%>
+<%--                <input type="hidden" value="${colaborador.getId()}" name="idColaborador" id="idColaborador"/>--%>
+<%--            </c:when>--%>
+<%--            <c:otherwise>--%>
+<%--                <input type="hidden" value=" " name="idColaborador" id="idColaborador"/>--%>
+<%--            </c:otherwise>--%>
+<%--        </c:choose>--%>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a type="hidden" class="nav-link" aria-current="page" href="/cadastro-usuario.action">cadastrar-me</a>
+                </li>
+                <li class="nav-item">
+                    <a type="hidden" class="nav-link" aria-current="page" href="#">login</a>
+                </li>
+
+<%--apagar--%>
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" style="margin-left: 20%; padding: 5%;" id="linkCadastrarMe" href="#">--%>
+<%--                        cadastrar-me--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--                apagar FIM--%>
+
+<%--                <li class="nav-item">--%>
+<%--                    <a class="nav-link" style="margin-left: 20%;" id="linkLogin" href="#">--%>
+<%--                        login--%>
+<%--                    </a>--%>
+<%--                </li>--%>
+<%--            </ul>--%>
+<%--            <c:choose>--%>
+<%--                <c:when test="${colaborador!=null}">--%>
+<%--                    <a class="navbar-text" style="color: hotpink; font-weight: bold; text-decoration: none;"  href="/home">sair</a>--%>
+<%--                </c:when>--%>
+<%--                <c:otherwise>--%>
+<%--                    <a class="navbar-text" style="color: hotpink; font-weight: bold; text-decoration: none;"  href="/login.action">login</a>--%>
+<%--                </c:otherwise>--%>
+<%--            </c:choose>--%>
+
+        </div>
+    </div>
+</nav>
