@@ -108,4 +108,4 @@
     </div>
 </form>
 </body>
-<%--<%@ include file="footer.jspf" %>--%>
+<%@ include file="footer.jspf" %>
