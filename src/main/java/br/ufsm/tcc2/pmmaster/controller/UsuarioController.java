@@ -71,27 +71,28 @@ public class UsuarioController {
 
     @RequestMapping(value = "/usuario/editar-usuario.action", method = RequestMethod.POST)
     public String editarColaborador(Model model, HttpServletRequest request,
-                                    @RequestParam(value = "id") Long idUsuario,
-                                    @RequestParam(value = "idUsu")Long idUsu) {
+                                    @RequestParam(value = "id") Long idUsuario) {
+//                                    @RequestParam(value = "idUsu")Long idUsu) {
 
-        Usuario usuario = usuarioService.find(idUsu);
+        //Usuario usuario = usuarioService.find(idUsu);
         Usuario usuarioEditar = usuarioService.find(idUsuario);
 
-        model.addAttribute("usuario", usuario);
+        //model.addAttribute("usuario", usuario);
         model.addAttribute("usuarioEditar", usuarioEditar);
 
         return "cadastro-usuario";
     }
 
     @RequestMapping(value = "/usuario/excluir-usuario.action", method = RequestMethod.POST)
-    public String excluirColaborador(HttpServletRequest request,
-                                     @RequestParam(value = "idUsu")Long idUsu) {
+    public String excluirColaborador(HttpServletRequest request) {
+//                                     @RequestParam(value = "idUsu")Long idUsu) {
 
         Long idUsuario = Long.parseLong(request.getParameter("idUsuario"));
         Usuario usuarioExcluir = usuarioService.find(idUsuario);
         usuarioService.delete(usuarioExcluir);
 
-        return "redirect:/usuarios.action?idUsu="+idUsu;
+//        return "redirect:/usuarios.action?idUsu="+idUsu;
+        return "redirect:/usuarios.action";
     }
 
 
