@@ -8,4 +8,10 @@
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
 </head>
+
+<body style="background-color: darkgrey;">
+<div align="center" style="margin-top: 3%;">
+    <h1 style="color: grey; font-weight: bold;
+                font-size: 460%;">PM Master Híbrido</h1>
+</div>
 <%@ include file="footer.jspf" %>

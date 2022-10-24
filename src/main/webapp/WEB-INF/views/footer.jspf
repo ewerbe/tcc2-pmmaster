@@ -6,7 +6,7 @@
     </div>
 <%--    <div>--%>
 <%--        <h5 style="color: hotpink">--%>
-<%--            aberto ? visitaç?o das 08:00h ?s 16:00h <br> de segunda ? sexta--%>
+<%--            aberto ? visita??o das 08:00h ?s 16:00h <br> de segunda ? sexta--%>
 <%--        </h5>--%>
 <%--    </div>--%>
 <%--    <div id="card-e-endereco">--%>
@@ -26,7 +26,7 @@
 
     <div style="margin-top: 3%; font-style: italic; font-weight: bold;" align="center">
         <p style="color: cornsilk;">
-            UFSM - COLÉGIO POLITÉCNICO - CSI - TCC - ewerton barbosa - PM Master 2022
+            UFSM - COLÉGIO POLITÉCNICO - CSI - TCC - ewerton barbosa - PM Master Híbrido - 2022
         </p>
     </div>
 </footer>
