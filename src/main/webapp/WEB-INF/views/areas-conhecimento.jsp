@@ -33,15 +33,21 @@
                 <td>
                     ${areaConhecimento.getDescricao()}
                 </td>
+<%--                <td align="center">--%>
+<%--                    <form method="post">--%>
+<%--                        <input type="submit" class="btn btn-outline-info"--%>
+<%--                               formaction="/area-conhecimento/areas-conhecimento.action?id=${areaConhecimento.getId()}" value="ver cartas"/>--%>
+<%--                            &lt;%&ndash;                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"&ndash;%&gt;--%>
+<%--                            &lt;%&ndash;                                        data-bs-target="#modalConfirmacaoExclusaoColaborador">&ndash;%&gt;--%>
+<%--                            &lt;%&ndash;                                    excluir&ndash;%&gt;--%>
+<%--                            &lt;%&ndash;                                </button>&ndash;%&gt;--%>
+<%--                    </form>--%>
+<%--                </td>--%>
                 <td align="center">
-                    <form method="post">
-                        <input type="submit" class="btn btn-outline-info"
-                               formaction="/area-conhecimento/areas-conhecimento.action?id=${areaConhecimento.getId()}" value="ver cartas"/>
-                            <%--                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"--%>
-                            <%--                                        data-bs-target="#modalConfirmacaoExclusaoColaborador">--%>
-                            <%--                                    excluir--%>
-                            <%--                                </button>--%>
-                    </form>
+                    <a style="font-weight: bolder; color: hotpink; font-style: normal"
+                       href="/cartas/cartas-area-conhecimento.action?id=${areaConhecimento.getId()}">
+                        ver cartas
+                    </a>
                 </td>
             </tr>
             <%--modal de confirmacao da exclusao--%>
