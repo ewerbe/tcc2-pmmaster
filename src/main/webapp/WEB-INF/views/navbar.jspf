@@ -19,6 +19,9 @@
                     <a type="hidden" class="nav-link" aria-current="page" href="/cadastro-usuario.action">cadastrar-me</a>
                 </li>
                 <li class="nav-item">
+                    <a type="hidden" class="nav-link" aria-current="page" href="/cartas.action">cartas</a>
+                </li>
+                <li class="nav-item">
                     <a type="hidden" class="nav-link" aria-current="page" href="#">login</a>
                 </li>
 
