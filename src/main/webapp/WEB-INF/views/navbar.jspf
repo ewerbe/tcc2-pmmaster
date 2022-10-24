@@ -25,13 +25,13 @@
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" style="margin-left: 20%;" id="navbarDropdownUsuarios" role="button"
                        data-bs-toggle="dropdown" aria-expanded="false">
-                        novo(a)
+                        usuário(a)
                     </a>
                     <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownUsuarios">
                         <%--                        <c:choose>--%>
                         <%--                            <c:when test="${colaborador!=null}">--%>
                         <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
-                            text-decoration: none;" href="/usuarios.action">usuário(a)</a></li>
+                            text-decoration: none;" href="/usuarios.action">usuários(as)</a></li>
                         <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
                         <%--                            text-decoration: none;"  href="/artistas.action?idColab=${colaborador.getId()}">artistas</a></li>--%>
                         <%--                            </c:when>--%>
@@ -42,6 +42,8 @@
                         <%--                            text-decoration: none;"  href="/artistas.action">artistas</a></li>--%>
                         <%--                            </c:otherwise>--%>
                         <%--                        </c:choose>--%>
+                            <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
+                            text-decoration: none;" href="/cadastro-usuario.action">novo(a)</a></li>
                     </ul>
                 </li>
 
@@ -55,7 +57,7 @@
 <%--                        <c:choose>--%>
 <%--                            <c:when test="${colaborador!=null}">--%>
                                 <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
-                            text-decoration: none;" href="/cartas.action">cartas</a></li>
+                            text-decoration: none;" href="/areas-conhecimento.action">ver todas</a></li>
 <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
 <%--                            text-decoration: none;"  href="/artistas.action?idColab=${colaborador.getId()}">artistas</a></li>--%>
 <%--                            </c:when>--%>
