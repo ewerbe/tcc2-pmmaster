@@ -1,29 +1,9 @@
-<footer class="card-footer bg-dark" style="margin-top: 6%;">
+<footer class="card-footer bg-dark" style="margin-top: 10%;">
     <div style="margin-top: 3%; margin-bottom: 3%;">
         <h3 style="color: hotpink;">
             Project Manager Master Híbrido
         </h3>
     </div>
-<%--    <div>--%>
-<%--        <h5 style="color: hotpink">--%>
-<%--            aberto ? visita??o das 08:00h ?s 16:00h <br> de segunda ? sexta--%>
-<%--        </h5>--%>
-<%--    </div>--%>
-<%--    <div id="card-e-endereco">--%>
-<%--        <div class="card" style="width: 18rem;">--%>
-<%--            <img src="/images/masm-logo.png" class="card-img-top" alt="logotipo do masm.">--%>
-<%--        </div>--%>
-<%--        <div align="right" style="margin-top: 0;">--%>
-<%--            <h5 style="color: hotpink;">--%>
-<%--                Avenida Presidente Vargas, 1400 <br>--%>
-<%--                Centro Integrado de Cultura Evandro Behr <br>--%>
-<%--                Santa Maria-RS <br>--%>
-<%--                CEP 97015-5010 <br>--%>
-<%--            </h5>--%>
-<%--        </div>--%>
-<%--    </div>--%>
-
-
     <div style="margin-top: 3%; font-style: italic; font-weight: bold;" align="center">
         <p style="color: cornsilk;">
             UFSM - COLÉGIO POLITÉCNICO - CSI - TCC - ewerton barbosa - PM Master Híbrido - 2022
