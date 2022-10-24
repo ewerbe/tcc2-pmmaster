@@ -14,15 +14,63 @@
 <%--            </c:otherwise>--%>
 <%--        </c:choose>--%>
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a type="hidden" class="nav-link" aria-current="page" href="/cadastro-usuario.action">cadastrar-me</a>
+            <ul class="navbar-nav me-lg-2 mb-2 mb-lg-0">
+<%--                <li class="nav-item" style="margin-left: 20%;">--%>
+<%--                    <a type="hidden" class="nav-link" style="padding: unset;" aria-current="page" href="/cadastro-usuario.action">novo usuário</a>--%>
+<%--                </li>--%>
+<%--                <li class="nav-item">--%>
+<%--                    <a type="hidden" class="nav-link" aria-current="page" href="/cartas.action">cartas</a>--%>
+<%--                </li>--%>
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="margin-left: 20%;" id="navbarDropdownUsuarios" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        novo(a)
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownUsuarios">
+                        <%--                        <c:choose>--%>
+                        <%--                            <c:when test="${colaborador!=null}">--%>
+                        <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
+                            text-decoration: none;" href="/usuarios.action">usuário(a)</a></li>
+                        <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
+                        <%--                            text-decoration: none;"  href="/artistas.action?idColab=${colaborador.getId()}">artistas</a></li>--%>
+                        <%--                            </c:when>--%>
+                        <%--                            <c:otherwise>--%>
+                        <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
+                        <%--                            text-decoration: none;" href="/obras.action">obras</a></li>--%>
+                        <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
+                        <%--                            text-decoration: none;"  href="/artistas.action">artistas</a></li>--%>
+                        <%--                            </c:otherwise>--%>
+                        <%--                        </c:choose>--%>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a type="hidden" class="nav-link" aria-current="page" href="/cartas.action">cartas</a>
+
+
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" style="margin-left: 20%;" id="navbarDropdownAreasConhecimento" role="button"
+                       data-bs-toggle="dropdown" aria-expanded="false">
+                        áreas de conhecimento
+                    </a>
+                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownAreasConhecimento">
+<%--                        <c:choose>--%>
+<%--                            <c:when test="${colaborador!=null}">--%>
+                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
+                            text-decoration: none;" href="/cartas.action">cartas</a></li>
+<%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
+<%--                            text-decoration: none;"  href="/artistas.action?idColab=${colaborador.getId()}">artistas</a></li>--%>
+<%--                            </c:when>--%>
+<%--                            <c:otherwise>--%>
+<%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
+<%--                            text-decoration: none;" href="/obras.action">obras</a></li>--%>
+<%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
+<%--                            text-decoration: none;"  href="/artistas.action">artistas</a></li>--%>
+<%--                            </c:otherwise>--%>
+<%--                        </c:choose>--%>
+                    </ul>
                 </li>
-                <li class="nav-item">
-                    <a type="hidden" class="nav-link" aria-current="page" href="#">login</a>
+
+                <li class="nav-item" style="margin-left: 20%;">
+                    <a type="hidden" class="nav-link" aria-current="page" href="login.jsp">login</a>
                 </li>
 
 <%--apagar--%>
