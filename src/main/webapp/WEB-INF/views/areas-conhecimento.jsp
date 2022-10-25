@@ -14,7 +14,7 @@
     <h1 style="color: grey; font-weight: bold;
                 font-size: 460%;">áreas de conhecimento</h1>
 </div>
-<div id="tableUsuariosContainer" align="center;" style="margin: auto; width: 80%;">
+<div id="tableAreasConhecimentoContainer" align="center;" style="margin: auto; width: 80%;">
     <table class="table table-dark table-hover">
         <thead>
         <tr>
@@ -45,7 +45,7 @@
 <%--                </td>--%>
                 <td align="center">
                     <a style="font-weight: bolder; color: hotpink; font-style: normal"
-                       href="/cartas/cartas-area-conhecimento.action?id=${areaConhecimento.getId()}">
+                       href="/areas-conhecimento/cartas-area-conhecimento.action?id=${areaConhecimento.getId()}">
                         ver cartas
                     </a>
                 </td>
