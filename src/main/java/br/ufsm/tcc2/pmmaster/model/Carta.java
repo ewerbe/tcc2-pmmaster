@@ -13,7 +13,7 @@ public class Carta {
 
     @OneToOne
     @JoinColumn(name="ID_AREA_CONHEC")
-    private AreaConhecimento idAreaConhec;
+    private AreaConhecimento areaConhecimento;
 
     @Column(name = "PERGUNTA")
     private String pergunta;
@@ -40,9 +40,9 @@ public class Carta {
     public Carta() {
     }
 
-    public Carta(AreaConhecimento idAreaConhec, String pergunta, String altern_A, String altern_B,
+    public Carta(AreaConhecimento areaConhecimento, String pergunta, String altern_A, String altern_B,
                  String altern_C, String altern_D, String altern_correta, Boolean ativa) {
-        this.idAreaConhec = idAreaConhec;
+        this.areaConhecimento = areaConhecimento;
         this.pergunta = pergunta;
         this.altern_A = altern_A;
         this.altern_B = altern_B;
@@ -60,12 +60,12 @@ public class Carta {
         this.id = id;
     }
 
-    public AreaConhecimento getIdAreaConhec() {
-        return idAreaConhec;
+    public AreaConhecimento getAreaConhecimento() {
+        return areaConhecimento;
     }
 
-    public void setIdAreaConhec(AreaConhecimento idAreaConhec) {
-        this.idAreaConhec = idAreaConhec;
+    public void setAreaConhecimento(AreaConhecimento areaConhecimento) {
+        this.areaConhecimento = areaConhecimento;
     }
 
     public String getPergunta() {
