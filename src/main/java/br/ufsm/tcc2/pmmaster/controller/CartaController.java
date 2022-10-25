@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -26,10 +27,16 @@ public class CartaController {
     @RequestMapping(value = "/cadastro-carta.action", method = RequestMethod.GET)
     public String getCadastroCarta(Model model) {
 //                                         @RequestParam(value = "idUsuario")Long idUsuario) {
-
+        ArrayList<Character> alternativas = new ArrayList<>();
+        alternativas.add('A');
+        alternativas.add('B');
+        alternativas.add('C');
+        alternativas.add('D');
 //        Usuario usuario = usuarioService.find(idUsuario);
 
         // model.addAttribute("usuario", usuario);
+        model.addAttribute("alternativas", alternativas);
+
         return "cadastro-carta";
     }
 
