@@ -71,48 +71,54 @@
 
 
         <div class="mb-3" align="left">
-            <label for="alternativa_D_carta" class="form-label" style="color: #262630;
-                   font-weight: bold;">alternativa D</label>
-            <input type="text" class="form-control bg-dark" id="alternativa_D_carta" name="alternativa_D_carta"
-                   value="${cartaEditar.getAltern_D()}"
-                   placeholder="insira aqui a alternativa D" style="color: antiquewhite;"
-                   required>
+            <label for="alternativa_correta_carta" class="form-label" style="color: #262630;
+                   font-weight: bold;">alternativa correta</label>
+            <select class="form-control bg-dark" id="alternativa_correta_carta" name="alternativa_correta_carta"
+                    value="${carta.getAltern_correta()}"
+                    required style="color: cornsilk;">
+                <c:forEach var="alternativa" items="${alternativas}">
+                    <c:choose>
+                        <c:when test="${carta.getAltern_correta() != null}">
+                            <c:if test="${carta.getAltern_correta() == alternativa}">
+                                <option value="${carta.getAltern_correta()}" selected>${alternativa}</option>
+                            </c:if>
+                            <option value="${alternativa}">${alternativa}</option>
+                        </c:when>
+                        <c:otherwise>
+                            <option value="${alternativa}">${alternativa}</option>
+                        </c:otherwise>
+                    </c:choose>
+                </c:forEach>
+            </select>
         </div>
 
-        <div class="mb-3" align="left">
-            <label for="senhaUsuario" class="form-label" style="color: #262630;
-                    font-weight: bold;">senha</label>
-            <input type="password" class="form-control bg-dark" id="senhaUsuario" name="senhaUsuario"
-                   value="${usuarioEditar.getSenha()}"
-                   placeholder="senha do(a) usuário(a)" style="color: antiquewhite;"
-                   required>
-        </div>
+
         <div class="mb-3" align="left">
             <c:choose>
-                <c:when test="${usuarioEditar != null && usuarioEditar.getAtivo()}">
-                    <input class="form-check-input" type="checkbox" id="checkUsuarioAtivo"
-                           name="checkUsuarioAtivo" checked>
+                <c:when test="${cartaEditar != null && cartaEditar.getAtiva()}">
+                    <input class="form-check-input" type="checkbox" id="checkCartaAtiva"
+                           name="checkCartaAtiva" checked>
                 </c:when>
                 <c:otherwise>
-                    <input class="form-check-input" type="checkbox" id="checkUsuarioAtivo"
-                           name="checkUsuarioAtivo">
+                    <input class="form-check-input" type="checkbox" id="checkCartaAtiva"
+                           name="checkCartaAtiva">
                 </c:otherwise>
             </c:choose>
-            <label class="form-check-label" for="checkUsuarioAtivo" style="color: #262630;
+            <label class="form-check-label" for="checkCartaAtiva" style="color: #262630;
                    font-weight: bold;">
-                ativo(a)
+                ativa
             </label>
         </div>
         <div align="left">
             <button type="button" class="btn btn-outline-dark btn-lg" data-bs-toggle="modal" data-bs-target="#modalConfirmacao">
                 salvar
             </button>
-            <c:if test="${usuarioEditar != null}">
+            <c:if test="${cartaEditar != null}">
                 <button type="button" class="btn btn-outline-danger btn-lg" data-bs-toggle="modal" data-bs-target="#modalConfirmacao">
                     excluir
                 </button>
                 <input type="submit" class="btn btn-dark" data-bs-dismiss="modal"
-                       formaction="/usuarios.action?idUsu=${usuario.getId()}" value="cancelar" formmethod="get" style="margin-left: 30%;"/>
+                       formaction="/cartas.action?idUsu=${usuario.getId()}" value="cancelar" formmethod="get" style="margin-left: 30%;"/>
             </c:if>
         </div>
 
@@ -132,10 +138,10 @@
                     </div>
                     <div class="modal-footer bg-dark">
                         <input type="submit" class="btn btn-outline-light" data-bs-dismiss="modal"
-                               formaction="/usuario/salvar-usuario.action?idUsu=${usuario.getId()}" formmethod="post" value="salvar"/>
-                        <c:if test="${usuarioEditar != null}">
+                               formaction="/carta/salvar-carta.action?idUsu=${usuario.getId()}" formmethod="post" value="salvar"/>
+                        <c:if test="${cartaEditar != null}">
                             <input type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal"
-                                   formaction="/usuario/excluir-usuario.action?idUsu=${usuario.getId()}" value="excluir" formmethod="post">
+                                   formaction="/carta/excluir-carta.action?idUsu=${usuario.getId()}" value="excluir" formmethod="post">
                         </c:if>
                         <button type="button" class="btn btn-danger" data-bs-dismiss="modal">cancelar</button>
                     </div>
