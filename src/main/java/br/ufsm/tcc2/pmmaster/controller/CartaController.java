@@ -69,9 +69,9 @@ public class CartaController {
         cartaNova.setId(idCarta);
         AreaConhecimento areaConhecimento = areaConhecimentoService.find(idAreaConhecCarta);
             if (areaConhecimento != null) {
-                cartaNova.setIdAreaConhec(areaConhecimento);
+                cartaNova.setAreaConhecimento(areaConhecimento);
             } else {
-                cartaNova.setIdAreaConhec(null);
+                cartaNova.setAreaConhecimento(null);
             }
         cartaNova.setPergunta(pergunta);
         cartaNova.setAltern_A(altern_A);
