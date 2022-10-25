@@ -1,7 +1,6 @@
 package br.ufsm.tcc2.pmmaster.controller;
 
 import br.ufsm.tcc2.pmmaster.model.AreaConhecimento;
-import br.ufsm.tcc2.pmmaster.model.Usuario;
 import br.ufsm.tcc2.pmmaster.service.AreaConhecimentoService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -12,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import java.util.List;
 
 @Controller
-public class AreaConheciementoController {
+public class AreaConhecimentoController {
 
     @Autowired
     AreaConhecimentoService areaConhecimentoService;
