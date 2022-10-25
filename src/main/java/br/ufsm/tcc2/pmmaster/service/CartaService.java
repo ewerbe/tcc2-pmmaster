@@ -12,9 +12,15 @@ public class CartaService {
 
     @Autowired
     CartaRepository cartaRepository;
+    @Autowired
+    AreaConhecimentoService areaConhecimentoService;
 
     public Carta find(Long idCarta) {
         return cartaRepository.findById(idCarta).orElse(null);
+    }
+
+    public List<Carta> findByAreaConhecimento(Long idAreaConhecimento) {
+        return cartaRepository.findByAreaConhecimento(areaConhecimentoService.find(idAreaConhecimento));
     }
 
     public void save(Carta carta) {
