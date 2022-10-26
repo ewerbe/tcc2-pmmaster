@@ -69,28 +69,43 @@
                    required>
         </div>
 
-
-        <div class="mb-3" align="left">
-            <label for="alternativa_correta_carta" class="form-label" style="color: #262630;
+        <c:choose>
+            <c:when test="${cartaEditar != null}">
+                <div class="mb-3" align="left">
+                    <label for="alternativa_correta_carta" class="form-label" style="color: #262630;
                    font-weight: bold;">alternativa correta</label>
-            <select class="form-control bg-dark" id="alternativa_correta_carta" name="alternativa_correta_carta"
-                    value="${carta.getAltern_correta()}"
-                    required style="color: cornsilk;">
-                <c:forEach var="alternativa" items="${alternativas}">
-                    <c:choose>
-                        <c:when test="${carta.getAltern_correta() != null}">
-                            <c:if test="${carta.getAltern_correta() == alternativa}">
-                                <option value="${carta.getAltern_correta()}" selected>${alternativa}</option>
-                            </c:if>
-                            <option value="${alternativa}">${alternativa}</option>
-                        </c:when>
-                        <c:otherwise>
-                            <option value="${alternativa}">${alternativa}</option>
-                        </c:otherwise>
-                    </c:choose>
-                </c:forEach>
-            </select>
-        </div>
+                    <select class="form-control bg-dark" id="alternativa_correta_carta_editar" name="alternativa_correta_carta_editar"
+                            value="${cartaEditar.getAltern_correta()}"
+                            required style="color: cornsilk;">
+                        <option value="${cartaEditar.getAltern_correta()}">${cartaEditar.getAltern_correta()}</option>
+                    </select>
+                </div>
+            </c:when>
+            <c:otherwise>
+                <div class="mb-3" align="left">
+                    <label for="alternativa_correta_carta" class="form-label" style="color: #262630;
+                   font-weight: bold;">alternativa correta</label>
+                    <select class="form-control bg-dark" id="alternativa_correta_carta" name="alternativa_correta_carta"
+                            value="${carta.getAltern_correta()}"
+                            required style="color: cornsilk;">
+                        <c:forEach var="alternativa" items="${alternativas}">
+                            <c:choose>
+                                <c:when test="${carta.getAltern_correta() != null}">
+                                    <c:if test="${carta.getAltern_correta() == alternativa}">
+                                        <option value="${carta.getAltern_correta()}" selected>${alternativa}</option>
+                                    </c:if>
+                                    <option value="${alternativa}">${alternativa}</option>
+                                </c:when>
+                                <c:otherwise>
+                                    <option value="${alternativa}">${alternativa}</option>
+                                </c:otherwise>
+                            </c:choose>
+                        </c:forEach>
+                    </select>
+                </div>
+            </c:otherwise>
+        </c:choose>
+
 
 
         <div class="mb-3" align="left">
