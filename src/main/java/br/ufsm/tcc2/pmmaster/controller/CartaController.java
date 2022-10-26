@@ -27,11 +27,7 @@ public class CartaController {
     @RequestMapping(value = "/cadastro-carta.action", method = RequestMethod.GET)
     public String getCadastroCarta(Model model) {
 //                                         @RequestParam(value = "idUsuario")Long idUsuario) {
-        ArrayList<Character> alternativas = new ArrayList<>();
-        alternativas.add('A');
-        alternativas.add('B');
-        alternativas.add('C');
-        alternativas.add('D');
+        ArrayList<Character> alternativas = getAlternativas();
 //        Usuario usuario = usuarioService.find(idUsuario);
 
         // model.addAttribute("usuario", usuario);
@@ -102,6 +98,7 @@ public class CartaController {
         Carta cartaEditar = cartaService.find(idCarta);
 
         //model.addAttribute("usuario", usuario);
+        model.addAttribute("alternativas", getAlternativas());
         model.addAttribute("cartaEditar", cartaEditar);
 
         return "cadastro-carta";
@@ -117,5 +114,17 @@ public class CartaController {
 
 //        return "redirect:/usuarios.action?idUsu="+idUsu;
         return "redirect:/cartas.action";
+    }
+
+    ///////////////////////////
+
+    private ArrayList<Character> getAlternativas(){
+        ArrayList<Character> alternativas = new ArrayList<>();
+        alternativas.add('A');
+        alternativas.add('B');
+        alternativas.add('C');
+        alternativas.add('D');
+
+        return alternativas;
     }
 }
