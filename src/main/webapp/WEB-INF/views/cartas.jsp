@@ -29,7 +29,7 @@
             <input type="hidden" value="${carta.getId()}" name="idCartaExclusao"
                    id="idCartaExclusao"/>
             <tr>
-                <th scope="row">${carta.getPerguntaNome()}</th>
+                <th scope="row">${carta.getPergunta()}</th>
 <%--                <td>${usuario.getEmail()}</td>--%>
                 <td>
                     <c:if test="${carta.getAtiva()}">
