@@ -14,7 +14,15 @@
     <h1 style="color: grey; font-weight: bold;
                 font-size: 460%;">cartas</h1>
 </div>
-<div id="tableUsuariosContainer" align="center;" style="margin: auto; width: 80%;">
+<div>
+    <form action="/cadastro-carta.action" method="get">
+        <button type="submit" class="btn-lg btn-dark"
+                style="font-weight: bolder; color: hotpink; margin-left: 71%;">
+            <span style="white-space: nowrap;">nova <i class="bi bi-plus-circle"></i></span>
+        </button>
+    </form>
+</div>
+<div id="tableCartasContainer" align="center;" style="margin: auto; width: 80%;">
     <table class="table table-dark table-hover">
         <thead>
         <tr>
@@ -29,6 +37,7 @@
             <input type="hidden" value="${carta.getId()}" name="idCartaExclusao"
                    id="idCartaExclusao"/>
             <tr>
+                <th scope="row">${carta.getId()}</th>
                 <th scope="row">${carta.getPergunta()}</th>
 <%--                <td>${usuario.getEmail()}</td>--%>
                 <td>
