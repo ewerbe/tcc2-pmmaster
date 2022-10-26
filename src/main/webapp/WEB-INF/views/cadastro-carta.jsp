@@ -133,6 +133,7 @@
                     excluir
                 </button>
                 <input type="submit" class="btn btn-dark" data-bs-dismiss="modal"
+<%--                       formaction="/cartas.action?idUsu=${usuario.getId()}" value="cancelar" formmethod="get" style="margin-left: 30%;"/>--%>
                        formaction="/cartas.action?idUsu=${usuario.getId()}" value="cancelar" formmethod="get" style="margin-left: 30%;"/>
             </c:if>
         </div>
@@ -153,7 +154,9 @@
                     </div>
                     <div class="modal-footer bg-dark">
                         <input type="submit" class="btn btn-outline-light" data-bs-dismiss="modal"
-                               formaction="/carta/salvar-carta.action?idUsu=${usuario.getId()}" formmethod="post" value="salvar"/>
+<%--                               formaction="/carta/salvar-carta.action?idUsu=${usuario.getId()}" formmethod="post" value="salvar"/>--%>
+                               formaction="/carta/salvar-carta.action?idAreaConhecimentoCarta=${idAreaConhecimentoCarta}"
+                               formmethod="post" value="salvar"/>
                         <c:if test="${cartaEditar != null}">
                             <input type="submit" class="btn btn-outline-danger" data-bs-dismiss="modal"
                                    formaction="/carta/excluir-carta.action?idUsu=${usuario.getId()}" value="excluir" formmethod="post">

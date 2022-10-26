@@ -38,6 +38,7 @@ public class AreaConhecimentoController {
     public String getCartasAreaConhecimento(Model model, @RequestParam(value = "id")Long idAreaConhecimento){
         List<Carta> cartas = cartaService.findByAreaConhecimento(idAreaConhecimento);
 
+        model.addAttribute("idAreaConhecimentoCarta", idAreaConhecimento);
         model.addAttribute("cartas", cartas);
         return "cartas";
     }

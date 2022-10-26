@@ -15,7 +15,7 @@
                 font-size: 460%;">cartas</h1>
 </div>
 <div>
-    <form action="/cadastro-carta.action" method="get">
+    <form action="/cadastro-carta.action?id=${idAreaConhecimentoCarta}" method="post">
         <button type="submit" class="btn-lg btn-dark"
                 style="font-weight: bolder; color: hotpink; margin-left: 71%;">
             <span style="white-space: nowrap;">nova <i class="bi bi-plus-circle"></i></span>

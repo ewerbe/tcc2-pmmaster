@@ -24,13 +24,17 @@ public class CartaController {
     @Autowired
     AreaConhecimentoService areaConhecimentoService;
 
-    @RequestMapping(value = "/cadastro-carta.action", method = RequestMethod.GET)
-    public String getCadastroCarta(Model model) {
+    @RequestMapping(value = "/cadastro-carta.action", method = RequestMethod.POST)
+    public String getCadastroCarta(Model model,
+                                   @RequestParam(value = "id")
+                                           Long idAreaConhecimentoCarta) {
+
 //                                         @RequestParam(value = "idUsuario")Long idUsuario) {
         ArrayList<Character> alternativas = getAlternativas();
 //        Usuario usuario = usuarioService.find(idUsuario);
 
         // model.addAttribute("usuario", usuario);
+        model.addAttribute("idAreaConhecimentoCarta", idAreaConhecimentoCarta);
         model.addAttribute("alternativas", alternativas);
 
         return "cadastro-carta";
@@ -59,7 +63,8 @@ public class CartaController {
             idCarta = Long.valueOf(idCartaString);
         }
         String pergunta = request.getParameter("perguntaCarta");
-        Long idAreaConhecCarta = Long.valueOf(request.getParameter("idAreaConhecCarta"));
+//        Long idAreaConhecCarta = Long.valueOf(request.getParameter("idAreaConhecCarta"));
+        Long idAreaConhecCarta = 1L;
         String altern_A = request.getParameter("altern_A");
         String altern_B = request.getParameter("altern_B");
         String altern_C = request.getParameter("altern_C");
@@ -100,6 +105,7 @@ public class CartaController {
         //model.addAttribute("usuario", usuario);
         model.addAttribute("alternativas", getAlternativas());
         model.addAttribute("cartaEditar", cartaEditar);
+        model.addAttribute("areasConhecimento", getAreasConhecimento());
 
         return "cadastro-carta";
     }
@@ -126,5 +132,9 @@ public class CartaController {
         alternativas.add('D');
 
         return alternativas;
+    }
+
+    private List<AreaConhecimento> getAreasConhecimento() {
+        return areaConhecimentoService.findAll();
     }
 }
