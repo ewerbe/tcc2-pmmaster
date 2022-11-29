@@ -16,7 +16,7 @@
                 font-size: 460%;">tabuleiro(s)</h1>
 </div>
 <div>
-    <form action="/tabuleiros/novo-tabuleiro.action?idUsuario=${usuario.getId()}" method="post">
+    <form action="/tabuleiros/novo-tabuleiro.action?idUsuario=${idUsuario}" method="post">
         <button type="submit" class="btn-lg btn-dark"
                 style="font-weight: bolder; color: hotpink; margin-left: 71%;">
             <span style="white-space: nowrap;">gerar novo</span>
