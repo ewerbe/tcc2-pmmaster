@@ -17,9 +17,9 @@ public class IndexController {
 
     @GetMapping({"/", "/home"})
     public String getIndex(Model model) {
-        List<Usuario> usuarios = usuarioService.findAll();
-        Usuario usuario = usuarios.get(0);
-        model.addAttribute("idUsuario", usuario.getId());
+        //List<Usuario> usuarios = usuarioService.findAll();
+        //Usuario usuario = usuarios.get(0);
+        model.addAttribute("idUsuario", 1L);
         return "home";
     }
 }
