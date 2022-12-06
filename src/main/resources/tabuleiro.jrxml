@@ -1,46 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!-- Created with Jaspersoft Studio version 6.20.0.final using JasperReports Library version 6.20.0-2bc7ab61c56f459e8176eb05c7705e145cd400ad  -->
-<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="TesteTabuleiro" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="55f985c6-daa2-4f76-a52f-2ab656d82605">
-    <property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
-    <variable name="idTabuleiro" class="java.lang.Long">
-        <initialValueExpression><![CDATA[1]]></initialValueExpression>
-    </variable>
-    <background>
-        <band height="555" splitType="Stretch">
-            <property name="com.jaspersoft.studio.layout" value="com.jaspersoft.studio.editor.layout.FreeLayout"/>
-            <property name="com.jaspersoft.studio.unit.height" value="px"/>
-            <image>
-                <reportElement x="0" y="0" width="802" height="555" uuid="f0e773d1-e8bc-4a99-b42e-169c0d2db1f9"/>
-                <imageExpression><![CDATA["D:/Desktop/tabuleiro-background2.png"]]></imageExpression>
-            </image>
-            <image>
-                <reportElement x="570" y="465" width="88" height="85" uuid="f6377a91-9ce6-4fe4-9120-bf9466fb4ee4"/>
-                <imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
-new com.google.zxing.qrcode.QRCodeWriter().encode(
-"http://localhost:8080/idTabuleiro=$V{idTabuleiro}",
-com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
-            </image>
-        </band>
-    </background>
-    <title>
-        <band height="79" splitType="Stretch"/>
-    </title>
-    <pageHeader>
-        <band height="35" splitType="Stretch"/>
-    </pageHeader>
-    <columnHeader>
-        <band height="61" splitType="Stretch"/>
-    </columnHeader>
-    <detail>
-        <band height="125" splitType="Stretch"/>
-    </detail>
-    <columnFooter>
-        <band height="45" splitType="Stretch"/>
-    </columnFooter>
-    <pageFooter>
-        <band height="86" splitType="Stretch"/>
-    </pageFooter>
-    <summary>
-        <band height="42" splitType="Stretch"/>
-    </summary>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="tabuleiroTeste8" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="bcf662d3-0d2b-4d1d-ab15-9eafa1bce5b6">
+	<parameter name="ID_TABULEIRO" class="java.lang.Long"/>
+	<queryString>
+		<![CDATA[]]>
+	</queryString>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band height="35" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="125" splitType="Stretch"/>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="115" splitType="Stretch">
+			<image>
+				<reportElement x="485" y="15" width="160" height="100" uuid="79ed9a8c-b70c-4185-bbca-bc06c206d799"/>
+				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+                                    new com.google.zxing.qrcode.QRCodeWriter().encode(
+                         "http://localhost:8080/idTabuleiro="+$P{ID_TABULEIRO},
+                        com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
+			</image>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
 </jasperReport>
