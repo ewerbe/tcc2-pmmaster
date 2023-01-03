@@ -101,19 +101,67 @@
             <select class="form-control bg-dark" id="altern_correta" name="altern_correta"
                     value="${cartaEditar.getAltern_correta()}"
                     required style="color: cornsilk;">
-                <c:forEach var="alternativa" items="${alternativas}">
-                    <c:choose>
-                        <c:when test="${cartaEditar != null}">
-                            <c:if test="${cartaEditar.getAltern_correta().equals(alternativa)}">
-                                <option value="${cartaEditar.getAltern_correta()}" selected>${alternativa}</option>
-                            </c:if>
-                            <option value="${alternativa}">${alternativa}</option>
-                        </c:when>
-                        <c:otherwise>
-                            <option value="${alternativa}">${alternativa}</option>
-                        </c:otherwise>
-                    </c:choose>
-                </c:forEach>
+<%--                <c:forEach var="alternativa" items="${alternativas}">--%>
+<%--                    <c:choose>--%>
+<%--                        <c:when test="${cartaEditar != null}">--%>
+<%--                            <c:if test="${cartaEditar.getAltern_correta().equals(alternativa)}">--%>
+<%--                                <option value="${cartaEditar.getAltern_correta()}" selected>${alternativa}</option>--%>
+<%--                            </c:if>--%>
+<%--                            <option value="${alternativa}">${alternativa}</option>--%>
+<%--                        </c:when>--%>
+<%--                        <c:otherwise>--%>
+<%--                            <option value="${alternativa}">${alternativa}</option>--%>
+<%--                        </c:otherwise>--%>
+<%--                    </c:choose>--%>
+<%--                </c:forEach>--%>
+
+                        <c:choose>
+                            <c:when test="${cartaEditar != null}">
+                                <c:choose>
+                                    <c:when test="${cartaEditar.getAltern_correta()=='A'}">
+                                        <option value="${cartaEditar.getAltern_correta()}" selected>A</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${cartaEditar.getAltern_correta()}">A</option>
+                                    </c:otherwise>
+                                </c:choose>
+
+                                <c:choose>
+                                    <c:when test="${cartaEditar.getAltern_correta()=='B'}">
+                                        <option value="${cartaEditar.getAltern_correta()}" selected>B</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${cartaEditar.getAltern_correta()}">B</option>
+                                    </c:otherwise>
+                                </c:choose>
+
+                                <c:choose>
+                                    <c:when test="${cartaEditar.getAltern_correta()=='C'}">
+                                        <option value="${cartaEditar.getAltern_correta()}" selected>C</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${cartaEditar.getAltern_correta()}">C</option>
+                                    </c:otherwise>
+                                </c:choose>
+
+                                <c:choose>
+                                    <c:when test="${cartaEditar.getAltern_correta()=='D'}">
+                                        <option value="${cartaEditar.getAltern_correta()}" selected>D</option>
+                                    </c:when>
+                                    <c:otherwise>
+                                        <option value="${cartaEditar.getAltern_correta()}">D</option>
+                                    </c:otherwise>
+                                </c:choose>
+                            </c:when>
+
+                            <c:otherwise>
+                                <option value="A">A</option>
+                                <option value="B">B</option>
+                                <option value="C">C</option>
+                                <option value="D">D</option>
+                            </c:otherwise>
+
+                        </c:choose>
             </select>
         </div>
 
