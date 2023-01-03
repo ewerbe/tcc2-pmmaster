@@ -89,7 +89,7 @@ public class CartaController {
         Boolean ativa = ativaString != null && ativaString.equals("on");
         AreaConhecimento areaConhecimento;
         Carta cartaNova = new Carta();
-        //cartaNova.setId(idCarta);
+        cartaNova.setId(idCarta);
 
             if(idAreaConhecimentoCarta == null) {
                 areaConhecimento = (cartaService

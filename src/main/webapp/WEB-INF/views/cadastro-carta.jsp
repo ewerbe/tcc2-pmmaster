@@ -122,7 +122,7 @@
                                         <option value="${cartaEditar.getAltern_correta()}" selected>A</option>
                                     </c:when>
                                     <c:otherwise>
-                                        <option value="${cartaEditar.getAltern_correta()}">A</option>
+                                        <option value="A">A</option>
                                     </c:otherwise>
                                 </c:choose>
 
@@ -131,7 +131,7 @@
                                         <option value="${cartaEditar.getAltern_correta()}" selected>B</option>
                                     </c:when>
                                     <c:otherwise>
-                                        <option value="${cartaEditar.getAltern_correta()}">B</option>
+                                        <option value="B">B</option>
                                     </c:otherwise>
                                 </c:choose>
 
@@ -140,7 +140,7 @@
                                         <option value="${cartaEditar.getAltern_correta()}" selected>C</option>
                                     </c:when>
                                     <c:otherwise>
-                                        <option value="${cartaEditar.getAltern_correta()}">C</option>
+                                        <option value="C">C</option>
                                     </c:otherwise>
                                 </c:choose>
 
@@ -149,7 +149,7 @@
                                         <option value="${cartaEditar.getAltern_correta()}" selected>D</option>
                                     </c:when>
                                     <c:otherwise>
-                                        <option value="${cartaEditar.getAltern_correta()}">D</option>
+                                        <option value="D">D</option>
                                     </c:otherwise>
                                 </c:choose>
                             </c:when>
