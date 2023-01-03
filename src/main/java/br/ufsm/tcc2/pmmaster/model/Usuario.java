@@ -21,13 +21,8 @@ public class Usuario {
     @Column(name = "SENHA")
     private String senha;
 
-    @Column(name = "ADMIN")
-    private Boolean admin;
 
-    @Column(name = "ATIVO")
-    private Boolean ativo;
-
-    public Usuario(String nome, String email, String senha, Boolean admin, Boolean ativo) {
+    public Usuario(String nome, String email, String senha) {
     }
 
     public Usuario() {
@@ -66,20 +61,5 @@ public class Usuario {
         this.senha = senha;
     }
 
-    public Boolean getAdmin() {
-        return admin;
-    }
-
-    public void setAdmin(Boolean admin) {
-        this.admin = admin;
-    }
-
-    public Boolean getAtivo() {
-        return ativo;
-    }
-
-    public void setAtivo(Boolean ativo) {
-        this.ativo = ativo;
-    }
 }
 

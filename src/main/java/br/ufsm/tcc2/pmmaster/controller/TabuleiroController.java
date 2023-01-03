@@ -2,7 +2,6 @@ package br.ufsm.tcc2.pmmaster.controller;
 
 import br.ufsm.tcc2.pmmaster.model.Tabuleiro;
 import br.ufsm.tcc2.pmmaster.model.Usuario;
-import br.ufsm.tcc2.pmmaster.service.TabuleiroReportService;
 import br.ufsm.tcc2.pmmaster.service.TabuleiroService;
 import br.ufsm.tcc2.pmmaster.service.UsuarioService;
 import net.sf.jasperreports.engine.*;
@@ -29,8 +28,6 @@ public class TabuleiroController {
 
     @Autowired
     private TabuleiroService tabuleiroService;
-    @Autowired
-    private TabuleiroReportService tabuleiroReportService;
     @Autowired
     private UsuarioService usuarioService;
 
@@ -82,7 +79,7 @@ public class TabuleiroController {
         File file = ResourceUtils.getFile("classpath:tabuleiro.jrxml");
         //File file = ResourceUtils.getFile("classpath:src/main/resources/tabuleiro.jrxml");
         JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
-        JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(null);
+        //JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(null);
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("ID_TABULEIRO", idTabuleiro);
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
@@ -91,28 +88,28 @@ public class TabuleiroController {
     }
 
 
-    private JasperPrint getJasperPrint(final String jrxmlName,
-                                       final Map<String, Object> params,
-                                       final Collection<?> beanCollection) throws Exception {
-        final File file = ResourceUtils.getFile("classpath:reports//" + jrxmlName);
-        final DefaultJasperReportsContext contexto = DefaultJasperReportsContext.getInstance();
-        final JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(beanCollection);
-        final JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
-        addDefaultParams(params);
-        return JasperFillManager.fillReport(jasperReport, params, dataSource);
-    }
-
-    private void addDefaultParams(final Map<String, Object> params) throws FileNotFoundException {
-        final File fileImg = ResourceUtils.getFile("classpath:static//assets//img//imagemxxx.png");
-        params.put("SRC_IMAGE", fileImg.getAbsolutePath());
-    }
-
-    public byte[] exportPdf(final String jrxmlName,
-                            final Map<String, Object> params,
-                            final Collection<?> beanCollection) throws Exception {
-        final JasperPrint jasperPrint = getJasperPrint(jrxmlName, params, beanCollection);
-        return JasperExportManager.exportReportToPdf(jasperPrint);
-    }
+//    private JasperPrint getJasperPrint(final String jrxmlName,
+//                                       final Map<String, Object> params,
+//                                       final Collection<?> beanCollection) throws Exception {
+//        final File file = ResourceUtils.getFile("classpath:reports//" + jrxmlName);
+//        final DefaultJasperReportsContext contexto = DefaultJasperReportsContext.getInstance();
+//        final JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(beanCollection);
+//        final JasperReport jasperReport = JasperCompileManager.compileReport(file.getAbsolutePath());
+//        addDefaultParams(params);
+//        return JasperFillManager.fillReport(jasperReport, params, dataSource);
+//    }
+//
+//    private void addDefaultParams(final Map<String, Object> params) throws FileNotFoundException {
+//        final File fileImg = ResourceUtils.getFile("classpath:static//assets//img//imagemxxx.png");
+//        params.put("SRC_IMAGE", fileImg.getAbsolutePath());
+//    }
+//
+//    public byte[] exportPdf(final String jrxmlName,
+//                            final Map<String, Object> params,
+//                            final Collection<?> beanCollection) throws Exception {
+//        final JasperPrint jasperPrint = getJasperPrint(jrxmlName, params, beanCollection);
+//        return JasperExportManager.exportReportToPdf(jasperPrint);
+//    }
 
 
 }

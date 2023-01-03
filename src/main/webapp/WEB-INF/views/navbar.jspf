@@ -21,32 +21,9 @@
 <%--                <li class="nav-item">--%>
 <%--                    <a type="hidden" class="nav-link" aria-current="page" href="/cartas.action">cartas</a>--%>
 <%--                </li>--%>
-
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" style="margin-left: 20%;" id="navbarDropdownUsuarios" role="button"
-                       data-bs-toggle="dropdown" aria-expanded="false">
-                        usuário(a)
-                    </a>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownUsuarios">
-                        <%--                        <c:choose>--%>
-                        <%--                            <c:when test="${colaborador!=null}">--%>
-                        <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
-                            text-decoration: none;" href="/usuarios.action">usuários(as)</a></li>
-                        <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
-                        <%--                            text-decoration: none;"  href="/artistas.action?idColab=${colaborador.getId()}">artistas</a></li>--%>
-                        <%--                            </c:when>--%>
-                        <%--                            <c:otherwise>--%>
-                        <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
-                        <%--                            text-decoration: none;" href="/obras.action">obras</a></li>--%>
-                        <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
-                        <%--                            text-decoration: none;"  href="/artistas.action">artistas</a></li>--%>
-                        <%--                            </c:otherwise>--%>
-                        <%--                        </c:choose>--%>
-                            <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
-                            text-decoration: none;" href="/cadastro-usuario.action">novo(a)</a></li>
-                    </ul>
-                </li>
-
+    <li class="nav-item" style="margin-left: 20%;">
+        <a type="hidden" class="nav-link" aria-current="page" href="/tabuleiros.action?idUsuario=${idUsuario}">tabuleiro(s)</a>
+    </li>
 
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" style="margin-left: 20%;" id="navbarDropdownAreasConhecimento" role="button"
@@ -71,12 +48,10 @@
                     </ul>
                 </li>
 
-                <li class="nav-item" style="margin-left: 20%;">
-                    <a type="hidden" class="nav-link" aria-current="page" href="/tabuleiros.action?idUsuario=${idUsuario}">tabuleiro(s)</a>
-                </li>
 
-                <li class="nav-item" style="margin-left: 20%;">
-                    <a type="hidden" class="nav-link" aria-current="page" href="/login.action">login</a>
+
+                <li class="nav-item">
+                    <a type="hidden" class="nav-link" aria-current="page" href="/login.action" style="margin-left: 80%;">login</a>
                 </li>
 
 <%--apagar--%>

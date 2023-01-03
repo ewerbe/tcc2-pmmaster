@@ -15,38 +15,38 @@
     <h1 style="color: grey; font-weight: bold;
                 font-size: 460%;">tabuleiro(s)</h1>
 </div>
-<div>
+<div align="center">
     <form action="/tabuleiros/novo-tabuleiro.action?idUsuario=1" method="post">
         <button type="submit" class="btn-lg btn-dark"
-                style="font-weight: bolder; color: hotpink; margin-left: 71%;">
+                style="font-weight: bolder; color: hotpink;">
             <span style="white-space: nowrap;">gerar novo</span>
         </button>
     </form>
 </div>
-<div id="tableTabuleirosContainer" align="center;" style="margin: auto; width: 80%;">
-    <table class="table table-dark table-hover">
-        <thead>
-        <tr>
-            <th scope="col" style="color: hotpink;">id</th>
-            <th scope="col" style="color: hotpink; text-align: center;">arquivo PDF</th>
-        </tr>
-        </thead>
-        <tbody>
-        <c:forEach var="tabuleiro" items="${tabuleiros}">
-            <input type="hidden" value="${tabuleiro.getId()}" name="idTabuleiroExclusao"
-                   id="idTabuleiroExclusao"/>
-            <tr>
-                <th scope="row">${tabuleiro.getId()}</th>
-                <td align="center">
-                    <form method="post">
-                        <input type="submit" class="btn btn-outline-info"
-                               formaction="/tabuleiro/tabuleiro.action?id=${tabuleiro.getId()}" value="baixar arquivo pdf"/>
-                    </form>
-                </td>
-            </tr>
-        </c:forEach>
-        </tbody>
-    </table>
-</div>
+<%--<div id="tableTabuleirosContainer" align="center;" style="margin: auto; width: 80%;">--%>
+<%--    <table class="table table-dark table-hover">--%>
+<%--        <thead>--%>
+<%--        <tr>--%>
+<%--            <th scope="col" style="color: hotpink;">id</th>--%>
+<%--            <th scope="col" style="color: hotpink; text-align: center;">arquivo PDF</th>--%>
+<%--        </tr>--%>
+<%--        </thead>--%>
+<%--        <tbody>--%>
+<%--        <c:forEach var="tabuleiro" items="${tabuleiros}">--%>
+<%--            <input type="hidden" value="${tabuleiro.getId()}" name="idTabuleiroExclusao"--%>
+<%--                   id="idTabuleiroExclusao"/>--%>
+<%--            <tr>--%>
+<%--                <th scope="row">${tabuleiro.getId()}</th>--%>
+<%--                <td align="center">--%>
+<%--                    <form method="post">--%>
+<%--                        <input type="submit" class="btn btn-outline-info"--%>
+<%--                               formaction="/tabuleiro/tabuleiro.action?id=${tabuleiro.getId()}" value="baixar arquivo pdf"/>--%>
+<%--                    </form>--%>
+<%--                </td>--%>
+<%--            </tr>--%>
+<%--        </c:forEach>--%>
+<%--        </tbody>--%>
+<%--    </table>--%>
+<%--</div>--%>
 </body>
 <%@ include file="footer.jspf" %>

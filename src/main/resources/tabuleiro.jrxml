@@ -5,36 +5,27 @@
 	<queryString>
 		<![CDATA[]]>
 	</queryString>
-	<background>
-		<band splitType="Stretch"/>
-	</background>
-	<title>
-		<band height="79" splitType="Stretch"/>
-	</title>
-	<pageHeader>
-		<band height="35" splitType="Stretch"/>
-	</pageHeader>
-	<columnHeader>
-		<band height="61" splitType="Stretch"/>
-	</columnHeader>
-	<detail>
-		<band height="125" splitType="Stretch"/>
-	</detail>
-	<columnFooter>
-		<band height="45" splitType="Stretch"/>
-	</columnFooter>
 	<pageFooter>
-		<band height="115" splitType="Stretch">
-			<image>
-				<reportElement x="485" y="15" width="160" height="100" uuid="79ed9a8c-b70c-4185-bbca-bc06c206d799"/>
-				<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
+		<band height="420">
+			<frame>
+				<reportElement x="-20" y="-120" width="870" height="500" uuid="773ac6a3-b913-46ea-a419-aaeb94852e29"/>
+				<image>
+					<reportElement x="720" y="140" width="91" height="90" uuid="79ed9a8c-b70c-4185-bbca-bc06c206d799"/>
+					<imageExpression><![CDATA[com.google.zxing.client.j2se.MatrixToImageWriter.toBufferedImage(
                                     new com.google.zxing.qrcode.QRCodeWriter().encode(
                          "http://localhost:8080/idTabuleiro="+$P{ID_TABULEIRO},
                         com.google.zxing.BarcodeFormat.QR_CODE, 300, 300))]]></imageExpression>
-			</image>
+				</image>
+				<textField>
+					<reportElement x="710" y="130" width="110" height="20" forecolor="#F15759" uuid="8ed4c7ab-9ed8-43bc-83f7-8afbff2f4ace"/>
+					<textElement textAlignment="Center"/>
+					<textFieldExpression><![CDATA["ABRIR/LER CARTA"]]></textFieldExpression>
+				</textField>
+				<image>
+					<reportElement x="0" y="0" width="870" height="500" uuid="c7217b0c-adca-472d-9641-7ddaa9286694"/>
+					<imageExpression><![CDATA["D:/actualpmmasterhibrido/pmmaster/src/main/resources/img/tabuleiro-pmmaster-hibrido.png"]]></imageExpression>
+				</image>
+			</frame>
 		</band>
 	</pageFooter>
-	<summary>
-		<band height="42" splitType="Stretch"/>
-	</summary>
 </jasperReport>

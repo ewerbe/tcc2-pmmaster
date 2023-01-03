@@ -26,7 +26,7 @@ public class CartaController {
 
     @RequestMapping(value = "/cadastro-carta.action", method = RequestMethod.POST)
     public String getCadastroCarta(Model model,
-                                   @RequestParam(value = "id")
+                                   @RequestParam(value = "idAreaConhecimentoCarta", required = false)
                                            Long idAreaConhecimentoCarta) {
 
 //                                         @RequestParam(value = "idUsuario")Long idUsuario) {
@@ -53,8 +53,23 @@ public class CartaController {
         return "cartas";
     }
 
+    @RequestMapping(value = "/cartas/carta.action", method = RequestMethod.GET)
+    public String verCarta(Model model, HttpServletRequest request,
+                                    @RequestParam(value = "id") Long idCarta) {
+//                                    @RequestParam(value = "idUsu")Long idUsu) {
+        //Usuario usuario = usuarioService.find(idUsu);
+        Carta carta = cartaService.find(idCarta);
+
+        //model.addAttribute("usuario", usuario);
+        model.addAttribute("carta", carta);
+
+        return "carta";
+    }
+//TODO: arrumar o SAVECarta**************************************************************************************************************
     @RequestMapping(value = "/carta/salvar-carta.action", method = RequestMethod.POST)
-    public String salvarCarta(Model model, HttpServletRequest request) {
+    public String salvarCarta(Model model, HttpServletRequest request,
+                              @RequestParam(value = "idAreaConhecimentoCarta", required = false)
+                                      Long idAreaConhecimentoCarta){
 //                                    @RequestParam(value = "idUsu", required = false)Long idUsu) {
 
         String idCartaString = request.getParameter("idCarta");
@@ -63,8 +78,8 @@ public class CartaController {
             idCarta = Long.valueOf(idCartaString);
         }
         String pergunta = request.getParameter("perguntaCarta");
-//        Long idAreaConhecCarta = Long.valueOf(request.getParameter("idAreaConhecCarta"));
-        Long idAreaConhecCarta = 1L;
+        //Long idAreaConhecCarta = Long.valueOf(request.getParameter("idAreaConhecCarta"));
+        //Long idAreaConhecCarta = 1L;
         String altern_A = request.getParameter("altern_A");
         String altern_B = request.getParameter("altern_B");
         String altern_C = request.getParameter("altern_C");
@@ -72,15 +87,23 @@ public class CartaController {
         String altern_correta = request.getParameter("altern_correta");
         String ativaString = request.getParameter("checkCartaAtiva");
         Boolean ativa = ativaString != null && ativaString.equals("on");
-
+        AreaConhecimento areaConhecimento;
         Carta cartaNova = new Carta();
-        cartaNova.setId(idCarta);
-        AreaConhecimento areaConhecimento = areaConhecimentoService.find(idAreaConhecCarta);
-            if (areaConhecimento != null) {
+        //cartaNova.setId(idCarta);
+
+            if(idAreaConhecimentoCarta == null) {
+                areaConhecimento = (cartaService
+                        .find(Long.valueOf(request.getParameter("idCarta")))).getAreaConhecimento();
                 cartaNova.setAreaConhecimento(areaConhecimento);
             } else {
-                cartaNova.setAreaConhecimento(null);
+                areaConhecimento = areaConhecimentoService.find(idAreaConhecimentoCarta);
+                cartaNova.setAreaConhecimento(areaConhecimento);
             }
+//            if (areaConhecimento != null) {
+//                cartaNova.setAreaConhecimento(areaConhecimento);
+//            } else {
+//                cartaNova.setAreaConhecimento(null);
+//            }
         cartaNova.setPergunta(pergunta);
         cartaNova.setAltern_A(altern_A);
         cartaNova.setAltern_B(altern_B);
@@ -95,7 +118,7 @@ public class CartaController {
     }
 
     @RequestMapping(value = "/carta/editar-carta.action", method = RequestMethod.POST)
-    public String editarColaborador(Model model, HttpServletRequest request,
+    public String editarCarta(Model model, HttpServletRequest request,
                                     @RequestParam(value = "id") Long idCarta) {
 //                                    @RequestParam(value = "idUsu")Long idUsu) {
 
@@ -105,7 +128,7 @@ public class CartaController {
         //model.addAttribute("usuario", usuario);
         model.addAttribute("alternativas", getAlternativas());
         model.addAttribute("cartaEditar", cartaEditar);
-        model.addAttribute("areasConhecimento", getAreasConhecimento());
+        model.addAttribute("idAreaConhecimento", cartaEditar.getAreaConhecimento().getId());
 
         return "cadastro-carta";
     }

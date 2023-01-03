@@ -15,7 +15,7 @@
                 font-size: 460%;">cartas</h1>
 </div>
 <div>
-    <form action="/cadastro-carta.action?id=${idAreaConhecimentoCarta}" method="post">
+    <form action="/cadastro-carta.action?idAreaConhecimentoCarta=${idAreaConhecimentoCarta}" method="post">
         <button type="submit" class="btn-lg btn-dark"
                 style="font-weight: bolder; color: hotpink; margin-left: 71%;">
             <span style="white-space: nowrap;">nova <i class="bi bi-plus-circle"></i></span>
@@ -29,7 +29,7 @@
             <th scope="col" style="color: hotpink;">id</th>
             <th scope="col" style="color: hotpink;">pergunta</th>
             <th scope="col" style="color: hotpink;">status</th>
-            <th scope="col" style="color: hotpink; text-align: center;">ações</th>
+<%--            <th scope="col" style="color: hotpink; text-align: center;">ações</th>--%>
         </tr>
         </thead>
         <tbody>
@@ -57,6 +57,12 @@
                             <%--                                    excluir--%>
                             <%--                                </button>--%>
                     </form>
+                </td>
+                <td align="center">
+                    <a style="font-weight: bolder; color: hotpink; font-style: normal"
+                       href="/cartas/carta.action?id=${carta.getId()}">
+                        VER CARTA
+                    </a>
                 </td>
             </tr>
             <%--modal de confirmacao da exclusao--%>
