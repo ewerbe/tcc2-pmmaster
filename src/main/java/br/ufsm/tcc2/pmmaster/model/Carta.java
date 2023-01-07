@@ -8,7 +8,7 @@ public class Carta {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "ID_CARTA", unique = true)
+    @Column(name = "ID_CARTA", unique = true, length = 400)
     private Long id;
 
     @OneToOne

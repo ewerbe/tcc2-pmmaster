@@ -31,7 +31,7 @@
             <input type="text" class="form-control bg-dark" id="perguntaCarta" name="perguntaCarta"
                    value="${cartaEditar.getPergunta()}"
                    placeholder="insira aqui a pergunta da carta" style="color: antiquewhite; align-content: space-around;"
-                   required>
+                   required maxlength="400">
         </div>
         <div class="mb-3" align="left">
             <label for="altern_A" class="form-label" style="color: #262630;

@@ -26,18 +26,19 @@
     <table class="table table-dark table-hover">
         <thead>
         <tr>
-            <th scope="col" style="color: hotpink;">id</th>
+            <th scope="col" style="color: hotpink;">contador</th>
             <th scope="col" style="color: hotpink;">pergunta</th>
             <th scope="col" style="color: hotpink;">status</th>
 <%--            <th scope="col" style="color: hotpink; text-align: center;">ações</th>--%>
         </tr>
         </thead>
         <tbody>
+        <c:set var="contador" value="0"></c:set>
         <c:forEach var="carta" items="${cartas}">
             <input type="hidden" value="${carta.getId()}" name="idCartaExclusao"
                    id="idCartaExclusao"/>
             <tr>
-                <th scope="row">${carta.getId()}</th>
+                <th scope="row">${contador = contador + 1}</th>
                 <th scope="row">${carta.getPergunta()}</th>
 <%--                <td>${usuario.getEmail()}</td>--%>
                 <td>

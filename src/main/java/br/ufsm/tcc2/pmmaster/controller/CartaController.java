@@ -61,13 +61,14 @@ public class CartaController {
         Carta carta = cartaService.find(idCarta);
 
         //model.addAttribute("usuario", usuario);
+        model.addAttribute("idAreaConhecimentoCarta", carta.getAreaConhecimento().getId());
         model.addAttribute("carta", carta);
 
         return "carta";
     }
-//TODO: arrumar o SAVECarta**************************************************************************************************************
+
     @RequestMapping(value = "/carta/salvar-carta.action", method = RequestMethod.POST)
-    public String salvarCarta(Model model, HttpServletRequest request,
+    public String salvarCarta(HttpServletRequest request,
                               @RequestParam(value = "idAreaConhecimentoCarta", required = false)
                                       Long idAreaConhecimentoCarta){
 //                                    @RequestParam(value = "idUsu", required = false)Long idUsu) {
@@ -113,8 +114,9 @@ public class CartaController {
         cartaNova.setAtiva(ativa);
 
        cartaService.save(cartaNova);
+       //model.addAttribute("idAreaConhecimentoCarta", cartaNova.getAreaConhecimento().getId());
 
-        return "redirect:/cartas.action";
+        return "redirect:/areas-conhecimento/cartas-area-conhecimento.action?id="+cartaNova.getAreaConhecimento().getId();
     }
 
     @RequestMapping(value = "/carta/editar-carta.action", method = RequestMethod.POST)
@@ -128,19 +130,21 @@ public class CartaController {
         //model.addAttribute("usuario", usuario);
         model.addAttribute("alternativas", getAlternativas());
         model.addAttribute("cartaEditar", cartaEditar);
-        model.addAttribute("idAreaConhecimento", cartaEditar.getAreaConhecimento().getId());
+        model.addAttribute("idAreaConhecimentoCarta", cartaEditar.getAreaConhecimento().getId());
 
         return "cadastro-carta";
     }
 
     @RequestMapping(value = "/carta/excluir-carta.action", method = RequestMethod.POST)
-    public String excluirColaborador(HttpServletRequest request) {
+    public String excluirCarta(HttpServletRequest request, Model model) {
 //                                     @RequestParam(value = "idUsu")Long idUsu) {
 
         Long idCarta = Long.parseLong(request.getParameter("idCarta"));
         Carta cartaExcluir = cartaService.find(idCarta);
+        Long idAreaConhecimentoCarta = cartaExcluir.getAreaConhecimento().getId();
         cartaService.delete(cartaExcluir);
 
+        model.addAttribute("idAreaConhecimentoCarta", idAreaConhecimentoCarta);
 //        return "redirect:/usuarios.action?idUsu="+idUsu;
         return "redirect:/cartas.action";
     }

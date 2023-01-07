@@ -13,7 +13,46 @@
     <div style="position: relative;">
 <%--        <img src="/images/carta-teste.png" alt="carta do jogo pmmaster híbrido" width="1920px" height="1080px" style="width: 100%; height: auto;">--%>
 <%--        <div align="center" style="width: 250px; height: 350px; position: absolute;">--%>
-            <img src="/images/carta-teste.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        <c:if test="${carta.getAreaConhecimento().getId() == 1}">
+            <img src="/images/integracao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 2}">
+            <img src="/images/escopo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 3}">
+            <img src="/images/tempo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 4}">
+            <img src="/images/custos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 5}">
+            <img src="/images/qualidade.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 6}">
+            <img src="/images/recursos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 7}">
+            <img src="/images/comunicacao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 8}">
+            <img src="/images/riscos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 9}">
+            <img src="/images/aquisicoes.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
+        <c:if test="${carta.getAreaConhecimento().getId() == 10}">
+            <img src="/images/stakeholders.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+        </c:if>
+
                 <h3 style="position: absolute; color: black; top: 20%; margin-left: 41%;">
                     ${carta.getAreaConhecimento().getDescricao()}
 <%--                      INTEGRAÇÃO--%>
@@ -35,6 +74,12 @@
                         <strong>(D)</strong> ${carta.getAltern_D()}
                     </div>
 
+                    <div>
+                        <a style="font-weight: bolder; color: hotpink; font-style: normal"
+                           href="/areas-conhecimento/cartas-area-conhecimento.action?id=${carta.getAreaConhecimento().getId()}">
+                            voltar
+                        </a>
+                    </div>
                 </div>
 <%--            <div style="top: 40%; left: 30%;">${carta.getPergunta()}</div>--%>
 <%--            <div style="position: absolute;">--%>
