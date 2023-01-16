@@ -80,7 +80,7 @@ public class TabuleiroController {
         //JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(null);
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("ID_TABULEIRO", idTabuleiro);
-        parameters.put("urlqrcode", "http://35.199.83.75/jogada-areas-conhecimento.action?VwqpHstBcVtUNnnG=");
+        parameters.put("urlqrcode", "http://35.199.83.75:8080/jogada-areas-conhecimento.action?VwqpHstBcVtUNnnG=");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
 
         return JasperExportManager.exportReportToPdf(jasperPrint);

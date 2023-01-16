@@ -26,7 +26,7 @@
 				</textField>
 				<image>
 					<reportElement x="0" y="0" width="870" height="500" uuid="c7217b0c-adca-472d-9641-7ddaa9286694"/>
-					<imageExpression><![CDATA["D:/actualpmmasterhibrido/pmmaster/src/main/resources/img/tabuleiro-pmmaster-hibrido.png"]]></imageExpression>
+					<imageExpression><![CDATA["~/tcc2-pmmaster/src/main/resources/img/tabuleiro-pmmaster-hibrido.png"]]></imageExpression>
 				</image>
 			</frame>
 		</band>
