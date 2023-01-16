@@ -10,10 +10,21 @@
             crossorigin="anonymous"></script>
 </head>
 <body style="background-color: darkgrey;">
-<div align="center" style="margin-top: 3%;">
-    <h1 style="color: grey; font-weight: bold;
+<c:choose>
+    <c:when test="${idAreaConhecimentoCarta != null}">
+        <div align="center" style="margin-top: 3%;">
+            <h1 style="color: grey; font-weight: bold;
+                font-size: 460%;">cartas ${cartas[0].getAreaConhecimento().getDescricao()}</h1>
+        </div>
+    </c:when>
+    <c:otherwise>
+        <div align="center" style="margin-top: 3%;">
+            <h1 style="color: grey; font-weight: bold;
                 font-size: 460%;">cartas</h1>
-</div>
+        </div>
+    </c:otherwise>
+</c:choose>
+
 <div>
     <form action="/cadastro-carta.action?idAreaConhecimentoCarta=${idAreaConhecimentoCarta}" method="post">
         <button type="submit" class="btn-lg btn-dark"

@@ -10,8 +10,17 @@
 </head>
 
 <body style="background-color: darkgrey;">
-<div align="center" style="margin-top: 3%;">
-    <h1 style="color: grey; font-weight: bold;
-                font-size: 460%;">PM Master Híbrido</h1>
+<div align="center">
+<%--    <h1 style="color: grey; font-weight: bold;--%>
+<%--                font-size: 460%;">ProjectManagerMaster HÍBRIDO</h1>--%>
+    <img src="/images/logo.png" width="100%" alt="logo do jogo">
+</div>
+<div align="center" style="margin-top: 10%;">
+    <form action="/tabuleiros/novo-tabuleiro.action?idUsuario=1" method="post">
+        <button type="submit" class="btn-lg btn-dark"
+                style="font-weight: bolder; color: hotpink;">
+            <span style="white-space: nowrap;">gerar tabuleiro</span>
+        </button>
+    </form>
 </div>
 <%@ include file="footer.jspf" %>

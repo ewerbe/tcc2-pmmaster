@@ -13,7 +13,7 @@ public class Jogada {
 
     @OneToOne
     @JoinColumn(name="ID_TABULEIRO")
-    private Tabuleiro idTabuleiro;
+    private Tabuleiro tabuleiro;
 
     @OneToOne
     @JoinColumn(name="ID_CARTA")
@@ -22,13 +22,17 @@ public class Jogada {
     @Column(name = "ATIVA")
     private Boolean ativa;
 
+    @Column(name = "ANTIGA")
+    private Boolean antiga;
+
     public Jogada() {
     }
 
-    public Jogada(Tabuleiro idTabuleiro, Carta idCarta, Boolean ativa) {
-        this.idTabuleiro = idTabuleiro;
+    public Jogada(Tabuleiro tabuleiro, Carta idCarta, Boolean ativa, Boolean antiga) {
+        this.tabuleiro = tabuleiro;
         this.idCarta = idCarta;
         this.ativa = ativa;
+        this.antiga = antiga;
     }
 
     public Long getId() {
@@ -39,12 +43,12 @@ public class Jogada {
         this.id = id;
     }
 
-    public Tabuleiro getIdTabuleiro() {
-        return idTabuleiro;
+    public Tabuleiro getTabuleiro() {
+        return tabuleiro;
     }
 
-    public void setIdTabuleiro(Tabuleiro idTabuleiro) {
-        this.idTabuleiro = idTabuleiro;
+    public void setTabuleiro(Tabuleiro tabuleiro) {
+        this.tabuleiro = tabuleiro;
     }
 
     public Carta getIdCarta() {
@@ -61,5 +65,13 @@ public class Jogada {
 
     public void setAtiva(Boolean ativa) {
         this.ativa = ativa;
+    }
+
+    public Boolean getAntiga() {
+        return antiga;
+    }
+
+    public void setAntiga(Boolean antiga) {
+        this.antiga = antiga;
     }
 }

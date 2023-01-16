@@ -7,102 +7,247 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
             crossorigin="anonymous"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
+
 <body>
-
     <div style="position: relative;">
-<%--        <img src="/images/carta-teste.png" alt="carta do jogo pmmaster híbrido" width="1920px" height="1080px" style="width: 100%; height: auto;">--%>
-<%--        <div align="center" style="width: 250px; height: 350px; position: absolute;">--%>
-        <c:if test="${carta.getAreaConhecimento().getId() == 1}">
-            <img src="/images/integracao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 1}">
+                    <img src="/images/integracao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 1}">
+                    <img src="/images/integracao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 2}">
-            <img src="/images/escopo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 2}">
+                    <img src="/images/escopo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 2}">
+                    <img src="/images/escopo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 3}">
-            <img src="/images/tempo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 4}">
-            <img src="/images/custos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 3}">
+                    <img src="/images/tempo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 3}">
+                    <img src="/images/tempo.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 5}">
-            <img src="/images/qualidade.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 4}">
+                    <img src="/images/custos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 4}">
+                    <img src="/images/custos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 6}">
-            <img src="/images/recursos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 5}">
+                    <img src="/images/qualidade.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 5}">
+                    <img src="/images/qualidade.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 7}">
-            <img src="/images/comunicacao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 6}">
+                    <img src="/images/recursos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 6}">
+                    <img src="/images/recursos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 8}">
-            <img src="/images/riscos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 7}">
+                    <img src="/images/comunicacao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 7}">
+                    <img src="/images/comunicacao.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 9}">
-            <img src="/images/aquisicoes.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 8}">
+                    <img src="/images/riscos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 8}">
+                    <img src="/images/riscos.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
 
-        <c:if test="${carta.getAreaConhecimento().getId() == 10}">
-            <img src="/images/stakeholders.png" alt="carta do jogo pmmaster híbrido" width="100%;">
-        </c:if>
+            <c:choose>
+                <c:when test="${jogadaAtual!=null}">
+                    <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 9}">
+                        <img src="/images/aquisicoes.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                    </c:if>
+                </c:when>
+                <c:otherwise>
+                    <c:if test="${carta.getAreaConhecimento().getId() == 9}">
+                        <img src="/images/aquisicoes.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                    </c:if>
+                </c:otherwise>
+            </c:choose>
 
-                <h3 style="position: absolute; color: black; top: 20%; margin-left: 41%;">
-                    ${carta.getAreaConhecimento().getDescricao()}
-<%--                      INTEGRAÇÃO--%>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <c:if test="${jogadaAtual.getIdCarta().getAreaConhecimento().getId() == 10}">
+                    <img src="/images/stakeholders.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:when>
+            <c:otherwise>
+                <c:if test="${carta.getAreaConhecimento().getId() == 10}">
+                    <img src="/images/stakeholders.png" alt="carta do jogo pmmaster híbrido" width="100%;">
+                </c:if>
+            </c:otherwise>
+        </c:choose>
+
+
+        <%--PERGUNTAS E RESPOSTAS--%>
+        <c:choose>
+            <c:when test="${jogadaAtual!=null}">
+                <h3 style="position: absolute; color: black; top: 20%; margin-left: 32%;">
+                    ${jogadaAtual.getIdCarta().getAreaConhecimento().getDescricao()}
                 </h3>
-                <div style="position: absolute; top: 30%; left: 35%; width: 380px;">
-                    <div style="margin-top: 2%;" href="/carta-resposta.action...">
+            </c:when>
+            <c:otherwise>
+                <h3 style="position: absolute; color: black; top: 20%; margin-left: 32%;">
+                        ${carta.getAreaConhecimento().getDescricao()}
+                </h3>
+            </c:otherwise>
+        </c:choose>
+
+
+        <div style="position: absolute; top: 26%; left: 15%; width: 300px;
+                        alignment: center; padding-left: 3%; padding-right: 5%;">
+            <c:choose>
+                <c:when test="${jogadaAtual!=null}">
+                    <div>
+                        <strong>Pergunta:</strong> ${jogadaAtual.getIdCarta().getPergunta()}
+                    </div>
+                </c:when>
+                <c:otherwise>
+                    <div>
                         <strong>Pergunta:</strong> ${carta.getPergunta()}
                     </div>
-                    <div style="margin-top: 3%;" href="/carta-resposta.action...">
-                        <strong>(A)</strong> ${carta.getAltern_A()}
-                    </div>
-                    <div style="margin-top: 3%;" href="/carta-resposta.action...">
-                        <strong>(B)</strong> ${carta.getAltern_B()}
-                    </div>
-                    <div style="margin-top: 3%" href="/carta-resposta.action...">
-                        <strong>(C)</strong> ${carta.getAltern_C()}
-                    </div>
-                    <div style="margin-top: 3%;" href="/carta-resposta.action...">
-                        <strong>(D)</strong> ${carta.getAltern_D()}
-                    </div>
+                </c:otherwise>
+            </c:choose>
 
-                    <div>
-                        <a style="font-weight: bolder; color: hotpink; font-style: normal"
-                           href="/areas-conhecimento/cartas-area-conhecimento.action?id=${carta.getAreaConhecimento().getId()}">
-                            voltar
+
+            <c:choose>
+                <c:when test="${fecharAlternativas!=null}">
+                    <c:choose>
+                        <c:when test="${fecharAlternativas}">
+                        <div style="margin-top: 5%;">
+                            <strong>(A)</strong> ${jogadaAtual.getIdCarta().getAltern_A()}
+                        </div>
+                        <div style="margin-top: 5%;">
+                            <strong>(B)</strong> ${jogadaAtual.getIdCarta().getAltern_B()}
+                        </div>
+                        <div style="margin-top: 5%">
+                            <strong>(C)</strong> ${jogadaAtual.getIdCarta().getAltern_C()}
+                        </div>
+                        <div style="margin-top: 5%;">
+                            <strong>(D)</strong> ${jogadaAtual.getIdCarta().getAltern_D()}
+                        </div>
+                        <div style="background-color: #262630" align="center">
+                            <a style="font-weight: bolder; color: hotpink; font-style: normal"
+                               href="/">
+                                OK
+                            </a>
+                        </div>
+                    </div>
+                    </c:when>
+                    <c:otherwise>
+                        <a href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=1">
+                            <div style="margin-top: 5%;" >
+                                <strong>(A)</strong> ${jogadaAtual.getIdCarta().getAltern_A()}
+                            </div>
                         </a>
-                    </div>
-                </div>
-<%--            <div style="top: 40%; left: 30%;">${carta.getPergunta()}</div>--%>
-<%--            <div style="position: absolute;">--%>
-<%--                <p>${carta.getAltern_A()}</p>--%>
-<%--            </div>--%>
-<%--            <div style="position: absolute;">--%>
-<%--                <p>${carta.getAltern_B()}</p>--%>
-<%--            </div>--%>
-<%--        </div>--%>
+
+                        <a href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=2">
+                            <div style="margin-top: 5%;" >
+                                <strong>(B)</strong> ${jogadaAtual.getIdCarta().getAltern_B()}
+                            </div>
+                        </a>
+
+                        <a href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=3">
+                            <div style="margin-top: 5%" >
+                                <strong>(C)</strong> ${jogadaAtual.getIdCarta().getAltern_C()}
+                            </div>
+                        </a>
+
+                        <a  href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=4">
+                            <div style="margin-top: 5%;">
+                                <strong>(D)</strong> ${jogadaAtual.getIdCarta().getAltern_D()}
+                            </div>
+                        </a>
+
+                        </c:otherwise>
+                    </c:choose>
+                </c:when>
+                <c:otherwise>
+                            <div style="margin-top: 5%;">
+                                <strong>(A)</strong> ${carta.getAltern_A()}
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <strong>(B)</strong> ${carta.getAltern_B()}
+                            </div>
+                            <div style="margin-top: 5%">
+                                <strong>(C)</strong> ${carta.getAltern_C()}
+                            </div>
+                            <div style="margin-top: 5%;">
+                                <strong>(D)</strong> ${carta.getAltern_D()}
+                            </div>
+                            <div style="background-color: #262630">
+                                <a style="font-weight: bolder; color: hotpink; font-style: normal"
+                                   href="/">
+                                    OK
+                                </a>
+                            </div>
+                        </div>
+                </c:otherwise>
+            </c:choose>
     </div>
-
-
-<%--<div class="card bg-dark text-white">--%>
-<%--    <img src="/images/carta-teste.png" class="card-img" alt="fundo para carta do jogo pmmaster híbrido">--%>
-<%--    <div class="card-img-overlay">--%>
-<%--        <h5 class="card-title">Card title</h5>--%>
-<%--        <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>--%>
-<%--        <p class="card-text">Last updated 3 mins ago</p>--%>
-<%--    </div>--%>
-<%--</div>--%>
-
-    <%--<div align="center" style="margin-top: 3%;">--%>
-<%--    <h1 style="color: grey; font-weight: bold;--%>
-<%--                font-size: 460%;">cartas</h1>--%>
-<%--</div>--%>
 </body>

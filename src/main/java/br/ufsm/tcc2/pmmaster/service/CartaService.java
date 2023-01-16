@@ -1,5 +1,6 @@
 package br.ufsm.tcc2.pmmaster.service;
 
+import br.ufsm.tcc2.pmmaster.model.AreaConhecimento;
 import br.ufsm.tcc2.pmmaster.model.Carta;
 import br.ufsm.tcc2.pmmaster.repository.CartaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,4 +35,12 @@ public class CartaService {
     public void delete(Carta carta) {
         cartaRepository.delete(carta);
     }
+
+//    public void update(Carta cartaAtual) {
+//        cartaRepository.update(cartaAtual);
+//    }
+
+//    public int getTotalCartasAtivasPorAreaConhecimento(Long idAreaConhecimento) {
+//        return cartaRepository.c
+//    }
 }

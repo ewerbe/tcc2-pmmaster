@@ -1,10 +1,10 @@
 package br.ufsm.tcc2.pmmaster.controller;
 
-import br.ufsm.tcc2.pmmaster.model.AreaConhecimento;
-import br.ufsm.tcc2.pmmaster.model.Carta;
-import br.ufsm.tcc2.pmmaster.model.Usuario;
+import br.ufsm.tcc2.pmmaster.model.*;
 import br.ufsm.tcc2.pmmaster.service.AreaConhecimentoService;
 import br.ufsm.tcc2.pmmaster.service.CartaService;
+import br.ufsm.tcc2.pmmaster.service.JogadaService;
+import br.ufsm.tcc2.pmmaster.service.TabuleiroService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -13,8 +13,7 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 @Controller
 public class CartaController {
@@ -23,6 +22,10 @@ public class CartaController {
     CartaService cartaService;
     @Autowired
     AreaConhecimentoService areaConhecimentoService;
+    @Autowired
+    JogadaService jogadaService;
+    @Autowired
+    TabuleiroService tabuleiroService;
 
     @RequestMapping(value = "/cadastro-carta.action", method = RequestMethod.POST)
     public String getCadastroCarta(Model model,
@@ -40,6 +43,8 @@ public class CartaController {
         return "cadastro-carta";
     }
 
+
+
     @RequestMapping(value = "/cartas.action", method = RequestMethod.GET)
     public String getCartas(Model model) {
 //                                   @RequestParam(value = "idUsu", required = false)Long idUsu) {
@@ -55,15 +60,45 @@ public class CartaController {
 
     @RequestMapping(value = "/cartas/carta.action", method = RequestMethod.GET)
     public String verCarta(Model model, HttpServletRequest request,
-                                    @RequestParam(value = "id") Long idCarta) {
+                                    @RequestParam(value = "id") Long idCarta,
+                                    @RequestParam(value = "fechar", required=false)
+                                       boolean fecharAternativas) {
 //                                    @RequestParam(value = "idUsu")Long idUsu) {
         //Usuario usuario = usuarioService.find(idUsu);
         Carta carta = cartaService.find(idCarta);
 
         //model.addAttribute("usuario", usuario);
+        model.addAttribute("fecharAternativas", fecharAternativas);
         model.addAttribute("idAreaConhecimentoCarta", carta.getAreaConhecimento().getId());
         model.addAttribute("carta", carta);
+        return "carta";
+    }
 
+    //usuário vindo da seleção da área de conhecimento para gerar carta para a sua jogada;
+    @RequestMapping(value = "/cartas/jogada.action", method = RequestMethod.GET)
+    public String abrirCarta(Model model, HttpServletRequest request,
+                           @RequestParam(value = "JklrFqaC") Long idAreaConhecimentoCarta,
+                             @RequestParam(value = "kTbrnMSw")Long idTabuleiro) {
+//                                    @RequestParam(value = "idUsu")Long idUsu) {
+        //Usuario usuario = usuarioService.find(idUsu);
+        //Carta carta = cartaService.find(idCarta);
+        Tabuleiro tabuleiro = tabuleiroService.find(idTabuleiro);
+        Carta cartaAtual = getCartaParaJogadaAtual(idAreaConhecimentoCarta, idTabuleiro);
+        Jogada jogadaAtual = new Jogada();
+
+        if(tabuleiro != null) {
+            //abre e ativa a jogada atual com a sua respectiva carta;
+            jogadaAtual.setIdCarta(cartaAtual);
+            jogadaAtual.setTabuleiro(tabuleiro);
+            jogadaAtual.setAtiva(true);
+            jogadaAtual.setAntiga(false);
+            jogadaService.save(jogadaAtual);
+        }
+        //abre a tela com a carta aberta para ser respondida;
+//JklrFqaC=1&&kTbrnMSw
+        //model.addAttribute("usuario", usuario);
+        model.addAttribute("fecharAlternativas", false);
+        model.addAttribute("jogadaAtual", jogadaAtual);
         return "carta";
     }
 
@@ -150,6 +185,60 @@ public class CartaController {
     }
 
     ///////////////////////////
+
+    private Carta getCartaParaJogadaAtual(Long idAreaConhecimento, Long idTabuleiro) {
+        //retorna a carta gerada para a jogada atual.
+        Random random = new Random();
+        List<Carta> cartasTotais = cartaService.findByAreaConhecimento(idAreaConhecimento);//getCartasAtivas(idAreaConhecimento, idTabuleiro);
+        int limiteIndex = cartasTotais.size();
+        Long indexCartaToShow;
+        Carta cartaAtual = null;
+        //vai gerar uma carta aleatoriamente dentro da determinada área de conhecimento.
+        do{
+            indexCartaToShow = Long.valueOf(random.nextInt(limiteIndex));
+        } while(indexCartaToShow == 0 || indexCartaToShow == null ||
+                seCartaInativa(indexCartaToShow, cartasTotais, idTabuleiro));
+
+        cartaAtual = cartasTotais.get(Math.toIntExact(indexCartaToShow));
+        return cartaAtual;
+    }
+
+    private boolean seCartaInativa(Long indexCartaToShow, List<Carta> cartasTotais,
+                                   Long idTabuleiro) {
+        //se a carta é inativa, retorna true;
+        Tabuleiro tabuleiro = tabuleiroService.find(idTabuleiro);
+        List<Jogada> jogadasTabuleiro = jogadaService.findJogadaByTabuleiro(tabuleiro);
+
+        //se a carta já foi aberta em uma jogada atual, retorna "true", senão, "false";
+        for(Jogada jogadaTabuleiro : jogadasTabuleiro) {
+            if(!jogadaTabuleiro.getAntiga() && jogadaTabuleiro.
+                    getIdCarta().getId() == cartasTotais.get(Math.toIntExact(indexCartaToShow)).getId()) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    private List<Carta> getCartasAtivas(Long idAreaConhecimento, Long idTabuleiro) {
+//        int totalCartasAtivas = cartaService.getTotalCartasAtivasPorAreaConhecimento(idAreaConhecimento);
+        List<Carta> cartasAreaConhecimento = cartaService.findByAreaConhecimento(idAreaConhecimento);
+        List<Carta> cartasAtivas = new LinkedList<>();
+        List<Carta> cartasInativas = new LinkedList<>();
+        List<Jogada> jogadasTabuleiro = jogadaService.findJogadaByTabuleiro(tabuleiroService.find(idTabuleiro));
+        int totalCartasAtivas = 0;
+
+        for(Carta carta : cartasAtivas) {
+            for(Jogada jogada : jogadasTabuleiro) {
+                if ( (carta.getId() == jogada.getIdCarta().getId()) && !jogada.getAntiga() ){
+                    cartasInativas.add(carta);
+                }else {
+                    cartasAtivas.add(carta);
+                }
+            }
+        }
+        //totalCartasAtivas = ( cartasAreaConhecimento.size() - cartasInativas.size() );
+        return cartasAtivas;
+    }
 
     private ArrayList<Character> getAlternativas(){
         ArrayList<Character> alternativas = new ArrayList<>();

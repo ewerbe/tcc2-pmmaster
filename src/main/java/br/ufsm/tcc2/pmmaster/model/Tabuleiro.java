@@ -11,7 +11,15 @@ public class Tabuleiro {
     @Column(name = "ID_TABULEIRO", unique = true)
     private Long id;
 
+    @Column(name = "ATIVO")
+    private Boolean ativo;
+
     public Tabuleiro() {
+    }
+
+    public Tabuleiro(Long id, Boolean ativo) {
+        this.id = id;
+        this.ativo = ativo;
     }
 
     public Long getId() {
@@ -22,4 +30,11 @@ public class Tabuleiro {
         this.id = id;
     }
 
+    public Boolean getAtivo() {
+        return ativo;
+    }
+
+    public void setAtivo(Boolean ativo) {
+        this.ativo = ativo;
+    }
 }

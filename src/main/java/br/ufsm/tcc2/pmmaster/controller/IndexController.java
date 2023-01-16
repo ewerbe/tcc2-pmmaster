@@ -22,4 +22,6 @@ public class IndexController {
         model.addAttribute("idUsuario", 1L);
         return "home";
     }
+
+
 }

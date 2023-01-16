@@ -1,6 +1,7 @@
 package br.ufsm.tcc2.pmmaster.service;
 
 import br.ufsm.tcc2.pmmaster.model.Jogada;
+import br.ufsm.tcc2.pmmaster.model.Tabuleiro;
 import br.ufsm.tcc2.pmmaster.repository.JogadaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,5 +28,9 @@ public class JogadaService {
 
     public void delete(Jogada jogada) {
         jogadaRepository.delete(jogada);
+    }
+
+    public List<Jogada> findJogadaByTabuleiro(Tabuleiro tabuleiro) {
+        return jogadaRepository.findJogadaByTabuleiro(tabuleiro);
     }
 }

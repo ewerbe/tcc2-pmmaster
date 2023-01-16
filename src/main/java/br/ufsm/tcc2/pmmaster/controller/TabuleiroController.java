@@ -1,5 +1,6 @@
 package br.ufsm.tcc2.pmmaster.controller;
 
+import br.ufsm.tcc2.pmmaster.model.Carta;
 import br.ufsm.tcc2.pmmaster.model.Tabuleiro;
 import br.ufsm.tcc2.pmmaster.model.Usuario;
 import br.ufsm.tcc2.pmmaster.service.TabuleiroService;
@@ -50,24 +51,21 @@ public class TabuleiroController {
                                   HttpServletResponse response,
                                   @RequestParam(value = "idUsuario", required = false)Long idUsuario) throws Exception {
 
-        //TODO: teste com ID_TABULEIRO fixo, para por o tabuleiro Jasper na webapp;
-        //Long idTabuleiro = 1L;
+        Long idTabuleiro;
 
-        //Tabuleiro tabuleiroNovo = new Tabuleiro();
-        //tabuleiroNovo.setId(idTabuleiro);
-        //tabuleiroNovo.setIdUsuario(usuarioService.find(idUsuario));
-
+        Tabuleiro tabuleiroNovo = new Tabuleiro();
+        tabuleiroNovo.setAtivo(false);
         //consistir o novo tabuleiro no banco;
-        //tabuleiroService.save(tabuleiroNovo);
-        //criar o novo arquivo (jasper) do tabuleiro, passando o idUsuario pra gerar a URL destino do QRCODE;
-//        Boolean tabuleiroGerado = geraArquivoTabuleiro(tabuleiroNovo.getIdUsuario().getId());
+        tabuleiroService.save(tabuleiroNovo);
+        idTabuleiro = tabuleiroNovo.getId();
+       // Boolean tabuleiroGerado = geraArquivoTabuleiro(tabuleiroNovo);
         //tabuleiroReportService.exportReport(tabuleiroNovo.getId());
 
         response.setContentType("application/pdf");
         response.addHeader("Content-Disposition", "attachment; filename=tabuleiro.pdf");
 
         //geraArquivoTabuleiro(tabuleiroNovo.getId());
-        response.getOutputStream().write(geraArquivoTabuleiro(6L));
+        response.getOutputStream().write(geraArquivoTabuleiro(idTabuleiro));
     }
 
     ////////////////////////////
@@ -82,10 +80,13 @@ public class TabuleiroController {
         //JRBeanCollectionDataSource dataSource = new JRBeanCollectionDataSource(null);
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("ID_TABULEIRO", idTabuleiro);
+        parameters.put("urlqrcode", "http://35.199.83.75/jogada-areas-conhecimento.action?VwqpHstBcVtUNnnG=");
         JasperPrint jasperPrint = JasperFillManager.fillReport(jasperReport, parameters, new JREmptyDataSource());
 
         return JasperExportManager.exportReportToPdf(jasperPrint);
     }
+
+
 
 
 //    private JasperPrint getJasperPrint(final String jrxmlName,

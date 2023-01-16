@@ -9,4 +9,6 @@ import java.util.List;
 public interface CartaRepository extends JpaRepository <Carta, Long> {
 
     List<Carta> findByAreaConhecimento(AreaConhecimento areaConhecimento);
+
+//    void update(Carta cartaAtual);
 }
