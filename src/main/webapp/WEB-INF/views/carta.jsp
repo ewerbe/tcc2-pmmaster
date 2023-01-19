@@ -168,6 +168,9 @@
                             <c:when test="${diminuirFonte!=null && diminuirFonte}">
                                 <strong>Pergunta:</strong><p style="font-size: 8px;">${jogadaAtual.getIdCarta().getPergunta()}</p>>
                             </c:when>
+                        <c:otherwise>
+                            <strong>Pergunta:</strong><p style="font-size: 8px;">${jogadaAtual.getIdCarta().getPergunta()}</p>>
+                        </c:otherwise>
                         </c:choose>
 
                     </div>
