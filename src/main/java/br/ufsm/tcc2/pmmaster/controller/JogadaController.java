@@ -64,8 +64,11 @@ public class JogadaController {
                                        @RequestParam(value = "id")Long idJogadaAtual,
                                        @RequestParam(value = "oPtujCRT")int respostaDada){
         Boolean resultado = getResultadoJogada(idJogadaAtual, respostaDada);
-        //model.addAttribute("idAreaConhecimentoCarta", idAreaConhecimento);
-        model.addAttribute("jogadaAtual", jogadaService.find(idJogadaAtual));
+        Jogada jogadaAtual = jogadaService.find(idJogadaAtual);
+        jogadaAtual.setAntiga(true);
+        jogadaAtual.setAtiva(false);
+        jogadaService.save(jogadaAtual);
+        model.addAttribute("jogadaAtual", jogadaAtual);
         model.addAttribute("resultado", resultado);
         return "feedback";
     }

@@ -24,11 +24,16 @@
                     e dê OK para o(a) próximo(a) jogador(a),
                     ou finalize a partida.
                 </p>>
+<%--                <div style="background-color: #262630">--%>
+<%--                    <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
+<%--                     href="/jogadas/fechar-jogada.action?id=${jogadaAtual.getId()}">--%>
+<%--                     OK--%>
+<%--                    </a>--%>
+<%--                </div>--%>
                 <div style="background-color: #262630">
-                    <a style="font-weight: bolder; color: hotpink; font-style: normal"
-                     href="/jogadas/fechar-jogada.action?id=${jogadaAtual.getId()}">
-                     OK
-                    </a>
+                    <button style="font-weight: bolder; color: hotpink; font-style: normal" onclick="fecharAba()">
+                        OK
+                    </button>
                 </div>
                 <div style="background-color: #262630; margin-top: 10%;">
                     <a style="font-weight: bolder; color: hotpink; font-style: normal"
@@ -67,11 +72,16 @@
 
                 <p>Dê OK para o(a) próximo(a) jogador(a) ou finalize a partida.
                 </p>
-                <div style="background-color: #262630" align="center">
-                    <a style="font-weight: bolder; color: hotpink; font-style: normal"
-                       href="/jogadas/fechar-jogada.action?id=${jogadaAtual.getId()}">
+<%--                <div style="background-color: #262630" align="center">--%>
+<%--                    <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
+<%--                       href="/jogadas/fechar-jogada.action?id=${jogadaAtual.getId()}">--%>
+<%--                        OK--%>
+<%--                    </a>--%>
+<%--                </div>--%>
+                <div style="background-color: #262630">
+                    <button style="font-weight: bolder; color: hotpink; font-style: normal" onclick="fecharAba()">
                         OK
-                    </a>
+                    </button>
                 </div>
                 <div style="background-color: #262630; margin-top: 10%;" align="center">
                     <a style="font-weight: bolder; color: hotpink; font-style: normal;"
@@ -86,3 +96,8 @@
 </div>
 
 </body>
+<script>
+    function fecharAba(){
+        window.close()
+    }
+</script>
