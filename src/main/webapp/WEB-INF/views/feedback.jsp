@@ -16,14 +16,14 @@
 
     <c:choose>
         <c:when test="${resultado}">
-            <div>
+            <div align="center">
                 <h3 style="color: black; top: 20%; margin-left: 32%;">
-                        Resposta CERTA!
+                    Resposta CERTA!
                 </h3>
                 <p>Pegue sua ficha de pontuação da Área de Conhecimento<br>
                     e dê OK para o(a) próximo(a) jogador(a),
                     ou finalize a partida.
-                </p>>
+                </p>
 <%--                <div style="background-color: #262630">--%>
 <%--                    <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
 <%--                     href="/jogadas/fechar-jogada.action?id=${jogadaAtual.getId()}">--%>
