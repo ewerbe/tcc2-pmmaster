@@ -13,7 +13,7 @@
 <div align="center" style="margin-top: 3%;">
     <h1 style="color: grey; font-weight: bold;
                 font-size: 460%;">selecione a Área de Conhecimento</h1>
-    <div style="background-color: #262630; margin-top: 10%; height: 10%; padding-top: 10%;" align="center">
+    <div style="background-color: #262630; margin-top: 10%; height: 10%; padding-top: 7%;" align="center">
         <a style="font-weight: bolder; color: hotpink; font-style: normal; height: 10%; font-size: 24px;"
            href="/jogadas/finalizar-partida.action?id=${idTabuleiro}">
             FINALIZAR PARTIDA
