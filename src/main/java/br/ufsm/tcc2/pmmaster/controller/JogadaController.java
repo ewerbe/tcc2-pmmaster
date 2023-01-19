@@ -65,7 +65,6 @@ public class JogadaController {
                                        @RequestParam(value = "oPtujCRT")int respostaDada){
         Boolean resultado = getResultadoJogada(idJogadaAtual, respostaDada);
         Jogada jogadaAtual = jogadaService.find(idJogadaAtual);
-        jogadaAtual.setAntiga(true);
         jogadaAtual.setAtiva(false);
         jogadaService.save(jogadaAtual);
         model.addAttribute("jogadaAtual", jogadaAtual);
@@ -86,21 +85,30 @@ public class JogadaController {
     //método para FINALIZAR A PARTIDA;
     @RequestMapping(value = "/jogadas/finalizar-partida.action", method = RequestMethod.GET)
     public String finalizarPartidaParaTabuleiro(Model model,
-                                                @RequestParam(value = "id")Long idJogadaAtual){
-        Jogada jogadaAtual = jogadaService.find(idJogadaAtual);
-        Tabuleiro tabuleiro = tabuleiroService.find(jogadaAtual.getTabuleiro().getId());
+//                                                @RequestParam(value = "id", required = false)
+//                                                        Long idJogadaAtual,
+                                                @RequestParam(value = "id", required = false)
+                                                            Long idTabuleiro){
+        Tabuleiro tabuleiro;
+//        Jogada jogadaAtual;
+//        if(idJogadaAtual!=null) {
+//            jogadaAtual = jogadaService.find(idJogadaAtual);
+//            tabuleiro = tabuleiroService.find(jogadaAtual.getTabuleiro().getId());
+//        } else {
+            tabuleiro = tabuleiroService.find(idTabuleiro);
+       // }
         List<Jogada> jogadasTabuleiro = jogadaService.findJogadaByTabuleiro(tabuleiro);
         //passa todas as jogadas para a antiguidade do tabuleiro;
         //para não influenciar na cartas abertas na partida atual do tabuleiro.
         for(Jogada jogada : jogadasTabuleiro) {
             jogada.setAntiga(true);
+            jogada.setAtiva(false);
+            jogadaService.save(jogada);
         }
-        jogadaAtual.setAtiva(false);
         //desativando o tabuleiro para finalizar a partida atual.
         tabuleiro.setAtivo(false);
-
         tabuleiroService.save(tabuleiro);
-        jogadaService.save(jogadaAtual);
+        //jogadaService.save(jogadaAtual);
         return "redirect:/";
     }
 

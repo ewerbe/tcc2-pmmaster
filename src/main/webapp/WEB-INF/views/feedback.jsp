@@ -85,7 +85,7 @@
                 </div>
                 <div style="background-color: #262630; margin-top: 10%;" align="center">
                     <a style="font-weight: bolder; color: hotpink; font-style: normal;"
-                       href="/jogadas/finalizar-partida.action?id=${jogadaAtual.getId()}">
+                       href="/jogadas/finalizar-partida.action?id=${jogadaAtual.getIdTabuleiro().getId()}">
                         FINALIZAR PARTIDA
                     </a>
                 </div>

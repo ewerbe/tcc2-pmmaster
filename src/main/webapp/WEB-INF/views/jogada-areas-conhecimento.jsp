@@ -13,10 +13,15 @@
 <div align="center" style="margin-top: 3%;">
     <h1 style="color: grey; font-weight: bold;
                 font-size: 460%;">selecione a Área de Conhecimento</h1>
+    <div style="background-color: #262630; margin-top: 10%;" align="center">
+        <a style="font-weight: bolder; color: hotpink; font-style: normal;"
+           href="/jogadas/finalizar-partida.action?id=${idTabuleiro}">
+            FINALIZAR PARTIDA
+        </a>
+    </div>
 </div>
 
 <div align="center" style="margin-top: 10%; background-color: lightgray; padding-top: 3%; padding-bottom: 3%">
-<%--    esse é o teste, quando der, replicar nas demais [areas de conhecimento.--%>
     <h3>INTEGRAÇÃO</h3>
         <a href="/cartas/jogada.action?JklrFqaC=1&&kTbrnMSw=${idTabuleiro}">
             <div  style="width: 40%; height: 10%; background-color: #c1bc24;"></div>
