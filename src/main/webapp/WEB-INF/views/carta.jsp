@@ -169,7 +169,7 @@
                                 <strong>Pergunta:</strong><p style="font-size: 8px;">${jogadaAtual.getIdCarta().getPergunta()}</p>>
                             </c:when>
                         <c:otherwise>
-                            <strong>Pergunta:</strong><p style="font-size: 8px;">${jogadaAtual.getIdCarta().getPergunta()}</p>>
+                            <strong>Pergunta:</strong><p style="font-size: 12px;">${jogadaAtual.getIdCarta().getPergunta()}</p>
                         </c:otherwise>
                         </c:choose>
 
