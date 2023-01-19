@@ -164,7 +164,12 @@
             <c:choose>
                 <c:when test="${jogadaAtual!=null}">
                     <div>
-                        <strong>Pergunta:</strong> ${jogadaAtual.getIdCarta().getPergunta()}
+                        <c:choose>
+                            <c:when test="${diminuirFonte!=null && diminuirFonte}">
+                                <strong>Pergunta:</strong><p style="font-size: 8px;">${jogadaAtual.getIdCarta().getPergunta()}</p>>
+                            </c:when>
+                        </c:choose>
+
                     </div>
                 </c:when>
                 <c:otherwise>

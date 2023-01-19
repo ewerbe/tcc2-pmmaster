@@ -84,6 +84,10 @@ public class CartaController {
         //Carta carta = cartaService.find(idCarta);
         Tabuleiro tabuleiro = tabuleiroService.find(idTabuleiro);
         Carta cartaAtual = getCartaParaJogadaAtual(idAreaConhecimentoCarta, idTabuleiro);
+        if(cartaAtual.getPergunta().length() > 250) {
+            model.addAttribute("diminuirFonte", true);
+            System.out.println("******************************************************************** tamanho > 250");
+        }
         Jogada jogadaAtual = new Jogada();
 
         if(tabuleiro != null) {
