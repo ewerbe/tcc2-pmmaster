@@ -164,20 +164,20 @@
             <c:choose>
                 <c:when test="${jogadaAtual!=null}">
                     <div>
-                        <c:choose>
-                            <c:when test="${diminuirFonte!=null && diminuirFonte}">
-                                <strong>Pergunta:</strong><p style="font-size: 8px;">${jogadaAtual.getIdCarta().getPergunta()}</p>>
-                            </c:when>
-                        <c:otherwise>
-                            <strong>Pergunta:</strong><p style="font-size: 12px;">${jogadaAtual.getIdCarta().getPergunta()}</p>
-                        </c:otherwise>
-                        </c:choose>
+<%--                        <c:choose>--%>
+<%--                            <c:when test="${diminuirFonte!=null && diminuirFonte}">--%>
+                                <strong>Pergunta:</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getPergunta()}</p>>
+<%--                            </c:when>--%>
+<%--                        <c:otherwise>--%>
+<%--                            <strong>Pergunta:</strong><p style="font-size: 12px;">${jogadaAtual.getIdCarta().getPergunta()}</p>--%>
+<%--                        </c:otherwise>--%>
+<%--                        </c:choose>--%>
 
                     </div>
                 </c:when>
                 <c:otherwise>
                     <div>
-                        <strong>Pergunta:</strong> ${carta.getPergunta()}
+                        <strong>Pergunta:</strong><p style="font-size: 10px;">${carta.getPergunta()}</p>
                     </div>
                 </c:otherwise>
             </c:choose>
@@ -188,16 +188,16 @@
                     <c:choose>
                         <c:when test="${fecharAlternativas}">
                         <div style="margin-top: 5%;">
-                            <strong>(A)</strong> ${jogadaAtual.getIdCarta().getAltern_A()}
+                            <strong>(A)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_A()}</p>
                         </div>
                         <div style="margin-top: 5%;">
-                            <strong>(B)</strong> ${jogadaAtual.getIdCarta().getAltern_B()}
+                            <strong>(B)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_B()}</p>>
                         </div>
                         <div style="margin-top: 5%">
-                            <strong>(C)</strong> ${jogadaAtual.getIdCarta().getAltern_C()}
+                            <strong>(C)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_C()}</p>>
                         </div>
                         <div style="margin-top: 5%;">
-                            <strong>(D)</strong> ${jogadaAtual.getIdCarta().getAltern_D()}
+                            <strong>(D)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_D()}</p>>
                         </div>
 <%--                        <div style="background-color: #262630" align="center">--%>
 <%--                            <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
@@ -215,25 +215,25 @@
                     <c:otherwise>
                         <a href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=1">
                             <div style="margin-top: 5%;" >
-                                <strong>(A)</strong> ${jogadaAtual.getIdCarta().getAltern_A()}
+                                <strong>(A)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_A()}</p>>
                             </div>
                         </a>
 
                         <a href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=2">
                             <div style="margin-top: 5%;" >
-                                <strong>(B)</strong> ${jogadaAtual.getIdCarta().getAltern_B()}
+                                <strong>(B)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_B()}</p>
                             </div>
                         </a>
 
                         <a href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=3">
                             <div style="margin-top: 5%" >
-                                <strong>(C)</strong> ${jogadaAtual.getIdCarta().getAltern_C()}
+                                <strong>(C)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_C()}</p>>
                             </div>
                         </a>
 
                         <a  href="/jogadas/jogada.action?id=${jogadaAtual.getId()}&&oPtujCRT=4">
                             <div style="margin-top: 5%;">
-                                <strong>(D)</strong> ${jogadaAtual.getIdCarta().getAltern_D()}
+                                <strong>(D)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_D()}</p>>
                             </div>
                         </a>
 
@@ -242,16 +242,16 @@
                 </c:when>
                 <c:otherwise>
                             <div style="margin-top: 5%;">
-                                <strong>(A)</strong> ${carta.getAltern_A()}
+                                <strong>(A)</strong><p style="font-size: 10px;">${carta.getAltern_A()}</p>
                             </div>
                             <div style="margin-top: 5%;">
-                                <strong>(B)</strong> ${carta.getAltern_B()}
+                                <strong>(B)</strong><p style="font-size: 10px;">${carta.getAltern_B()}</p>>
                             </div>
                             <div style="margin-top: 5%">
-                                <strong>(C)</strong> ${carta.getAltern_C()}
+                                <strong>(C)</strong><p style="font-size: 10px;">${carta.getAltern_C()}</p>
                             </div>
                             <div style="margin-top: 5%;">
-                                <strong>(D)</strong> ${carta.getAltern_D()}
+                                <strong>(D)</strong><p style="font-size: 10px;">${carta.getAltern_D()}</p>
                             </div>
                             <div style="background-color: #262630">
                                 <a style="font-weight: bolder; color: hotpink; font-style: normal"
