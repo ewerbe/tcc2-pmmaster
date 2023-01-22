@@ -49,7 +49,7 @@ public class IndexController {
 //    }
 
 
-    @RequestMapping(value = "/fichas", method = RequestMethod.GET)
+    @RequestMapping(value = "/fichas.action", method = RequestMethod.GET)
     public ResponseEntity<Object> getImage() throws IOException {
 
         String filename = "/home/ewertonbarbos/tcc2-pmmaster/src/main/webapp/images/fichas.jpg";
