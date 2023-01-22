@@ -33,11 +33,11 @@
 <%--                       data-bs-toggle="dropdown" aria-expanded="false">--%>
 <%--                        áreas de conhecimento--%>
 <%--                    </a>--%>
-                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownAreasConhecimento">
+<%--                    <ul class="dropdown-menu bg-dark" aria-labelledby="navbarDropdownAreasConhecimento">--%>
 <%--                        <c:choose>--%>
 <%--                            <c:when test="${colaborador!=null}">--%>
-                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;
-                            text-decoration: none;" href="/areas-conhecimento.action">ver todas</a></li>
+<%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
+<%--                            text-decoration: none;" href="/areas-conhecimento.action">ver todas</a></li>--%>
 <%--                                <li><a class="dropdown-item" style="color: grey; padding-left: 5%;--%>
 <%--                            text-decoration: none;"  href="/artistas.action?idColab=${colaborador.getId()}">artistas</a></li>--%>
 <%--                            </c:when>--%>
