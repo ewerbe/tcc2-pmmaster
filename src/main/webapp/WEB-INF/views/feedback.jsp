@@ -10,7 +10,7 @@
             crossorigin="anonymous"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
-<body style="background-color: darkgrey">
+<body style="background-color: hotpink">
 
 <div style="margin-top: 20%; padding-left: 10%; padding-right: 10%;">
 
@@ -20,9 +20,9 @@
                 <h3 style="color: black; top: 20%;">
                     Resposta CERTA!
                 </h3>
-                <p style="color: hotpink">Pegue sua ficha de pontuação da Área de Conhecimento correspondente!</p>
+                <p style="color: cornsilk">Pegue sua ficha de pontuação da Área de Conhecimento correspondente!</p>
                 <p style="margin-top: 2%;">Agora é a vez do(a) próximo(a) jogador(a)!</p>
-                <p style="color: hotpink; font-weight: bolder;">Pode fechar esta aba em seu navegador.</p>
+                <p style="color: cornsilk; font-weight: bolder;">Pode fechar esta aba em seu navegador.</p>
             </div>
         </c:when>
 
@@ -53,7 +53,7 @@
                 </h5>
 
                 <p>Agora é a vez do(a) próximo(a) jogador(a)!</p>
-                <p style="color: hotpink; font-weight: bolder;">Pode fechar esta aba em seu navegador.</p>
+                <p style="color: cornsilk; font-weight: bolder;">Pode fechar esta aba em seu navegador.</p>
             </div>
         </c:otherwise>
     </c:choose>
