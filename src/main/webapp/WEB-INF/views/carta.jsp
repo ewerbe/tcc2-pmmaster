@@ -256,7 +256,7 @@
                                 </a>
                             </div>
                             <div align="center">
-                                <p style="color: hotpink; font-weight: bolder; margin-top: 5%;">
+                                <p style="color: hotpink; font-weight: bolder; margin-top: 15%;">
                                     *Caso a carta esteja travada, reinicie a partida no botão abaixo.
                                 </p>
                             </div>
