@@ -22,23 +22,7 @@
                 </h3>
                 <p style="color: hotpink">Pegue sua ficha de pontuação da Área de Conhecimento correspondente!</p>
                 <p style="margin-top: 2%;">Agora é a vez do(a) próximo(a) jogador(a)!</p>
-<%--                <div style="background-color: #262630">--%>
-<%--                    <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
-<%--                     href="/jogadas/fechar-jogada.action?id=${jogadaAtual.getId()}">--%>
-<%--                     OK--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--                <div style="background-color: #262630">--%>
-<%--                    <button style="font-weight: bolder; color: hotpink; font-style: normal" onclick="fecharAba()">--%>
-<%--                        OK--%>
-<%--                    </button>--%>
-<%--                </div>--%>
-<%--                <div style="background-color: #262630; margin-top: 10%;">--%>
-<%--                    <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
-<%--                       href="/jogadas/finalizar-partida.action?id=${jogadaAtual.getId()}">--%>
-<%--                        FINALIZAR PARTIDA--%>
-<%--                    </a>--%>
-<%--                </div>--%>
+                <p style="color: hotpink; font-weight: bolder;">Pode fechar esta aba em seu navegador.</p>
             </div>
         </c:when>
 
@@ -69,24 +53,7 @@
                 </h5>
 
                 <p>Agora é a vez do(a) próximo(a) jogador(a)!</p>
-                <p style="color: hotpink">Pode fechar esta aba em seu navegador.</p>
-<%--                <div style="background-color: #262630" align="center">--%>
-<%--                    <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
-<%--                       href="/jogadas/fechar-jogada.action?id=${jogadaAtual.getId()}">--%>
-<%--                        OK--%>
-<%--                    </a>--%>
-<%--                </div>--%>
-<%--                <div style="background-color: #262630">--%>
-<%--                    <button style="font-weight: bolder; color: hotpink; font-style: normal" onclick="fecharAbaFeedback()">--%>
-<%--                        OK--%>
-<%--                    </button>--%>
-<%--                </div>--%>
-<%--                <div style="background-color: #262630; margin-top: 10%;" align="center">--%>
-<%--                    <a style="font-weight: bolder; color: hotpink; font-style: normal;"--%>
-<%--                       href="/jogadas/finalizar-partida.action?id=${jogadaAtual.getTabuleiro().getId()}">--%>
-<%--                        FINALIZAR PARTIDA--%>
-<%--                    </a>--%>
-<%--                </div>--%>
+                <p style="color: hotpink; font-weight: bolder;">Pode fechar esta aba em seu navegador.</p>
             </div>
         </c:otherwise>
     </c:choose>
@@ -94,8 +61,3 @@
 </div>
 
 </body>
-<script>
-    function fecharAbaFeedback(){
-        window.close()
-    }
-</script>
