@@ -256,11 +256,11 @@
                                 </a>
                             </div>
                             <div align="center">
-                                <p style="color: hotpink; font-weight: bolder;">
+                                <p style="color: hotpink; font-weight: bolder; margin-top: 5%;">
                                     *Caso a carta esteja travada, reinicie a partida no botão abaixo.
-                                </p>>
+                                </p>
                             </div>
-                                <div style="background-color: #262630; margin-top: 10%; height: 10%; padding-top: 8%;" align="center">
+                                <div style="background-color: #262630; margin-top: 5%; height: 10%; padding-top: 3%;" align="center">
                                     <a style="font-weight: bolder; color: hotpink; font-style: normal; height: 10%; font-size: 24px;"
                                        href="/jogadas/finalizar-partida.action?id=${idTabuleiro}">
                                         REINICIAR PARTIDA
