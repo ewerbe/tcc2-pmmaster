@@ -46,7 +46,8 @@ public class JogadaController {
         //já tem jogada aberta no tabuleiro, entra direto na carta aberta. sem direito à resposta;
         if(jogadaAtual != null && jogadaAtual.getAtiva()) {
             boolean fechar = true;
-            return "redirect:/cartas/carta.action?id="+jogadaAtual.getIdCarta().getId()+"&fechar=true&id";
+            return "redirect:/cartas/carta.action?id="+jogadaAtual.getIdCarta().getId()+
+                    "&fechar=true&idTabuleiro="+idTabuleiro;
         } else {
             // jogadaAbertaAtual = abreJogada(idTabuleiro);
             //var para receber o idAreaConhecimento pela seleção do user;
