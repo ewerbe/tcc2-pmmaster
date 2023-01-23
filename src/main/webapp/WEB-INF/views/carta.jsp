@@ -199,12 +199,7 @@
                         <div style="margin-top: 5%;">
                             <strong>(D)</strong><p style="font-size: 10px;">${jogadaAtual.getIdCarta().getAltern_D()}</p>
                         </div>
-<%--                        <div style="background-color: #262630" align="center">--%>
-<%--                            <a style="font-weight: bolder; color: hotpink; font-style: normal"--%>
-<%--                               href="/">--%>
-<%--                                OK--%>
-<%--                            </a>--%>
-<%--                        </div>--%>
+
             <div style="background-color: #262630">
                 <button style="font-weight: bolder; color: hotpink; font-style: normal" onclick="fecharAba()">
                     OK

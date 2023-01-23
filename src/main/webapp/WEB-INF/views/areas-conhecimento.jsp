@@ -29,20 +29,9 @@
                    id="idAreaConhecimentoExclusao"/>
             <tr>
                 <th scope="row">${areaConhecimento.getId()}</th>
-                    <%--                <td>${usuario.getEmail()}</td>--%>
                 <td>
                     ${areaConhecimento.getDescricao()}
                 </td>
-<%--                <td align="center">--%>
-<%--                    <form method="post">--%>
-<%--                        <input type="submit" class="btn btn-outline-info"--%>
-<%--                               formaction="/area-conhecimento/areas-conhecimento.action?id=${areaConhecimento.getId()}" value="ver cartas"/>--%>
-<%--                            &lt;%&ndash;                                <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal"&ndash;%&gt;--%>
-<%--                            &lt;%&ndash;                                        data-bs-target="#modalConfirmacaoExclusaoColaborador">&ndash;%&gt;--%>
-<%--                            &lt;%&ndash;                                    excluir&ndash;%&gt;--%>
-<%--                            &lt;%&ndash;                                </button>&ndash;%&gt;--%>
-<%--                    </form>--%>
-<%--                </td>--%>
                 <td align="center">
                     <a style="font-weight: bolder; color: hotpink; font-style: normal"
                        href="/areas-conhecimento/cartas-area-conhecimento.action?id=${areaConhecimento.getId()}">
@@ -51,28 +40,6 @@
                 </td>
             </tr>
             <%--modal de confirmacao da exclusao--%>
-<%--            <div class="modal fade" id="modalConfirmacaoExclusaoCarta" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="1"--%>
-<%--                 aria-labelledby="modalConfirmacaoExclusaoCartaLabel" aria-hidden="true">--%>
-<%--                <div class="modal-dialog">--%>
-<%--                    <div class="modal-content">--%>
-<%--                        <div class="modal-header bg-dark" style="color: hotpink;" >--%>
-<%--                            <h5 class="modal-title"id="modalConfirmacaoCartaLabel">confirme as alterações</h5>--%>
-<%--                            <button type="button" class="btn-close btn-outline-dark" data-bs-dismiss="modal" aria-label="Close"></button>--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-body bg-dark" style="color: antiquewhite;">--%>
-<%--                            deseja excluir este cadastro?--%>
-<%--                        </div>--%>
-<%--                        <div class="modal-footer bg-dark">--%>
-<%--                            <form action="/carta/excluir-carta.action?id=${carta.getId()}" method="post">--%>
-<%--                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">--%>
-<%--                                    cancelar--%>
-<%--                                </button>--%>
-<%--                                <input type="submit" class="btn btn-outline-danger"--%>
-<%--                                       value="excluir"/>--%>
-<%--                            </form>--%>
-<%--                        </div>--%>
-<%--                    </div>--%>
-<%--                </div>--%>
             </div>
 
         </c:forEach>

@@ -11,8 +11,6 @@
 
 <body style="background-color: darkgrey;">
 <div align="center">
-<%--    <h1 style="color: grey; font-weight: bold;--%>
-<%--                font-size: 460%;">ProjectManagerMaster HÍBRIDO</h1>--%>
     <img src="/images/logo.png" width="100%" alt="logo do jogo">
 </div>
 <div align="center">
