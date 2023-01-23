@@ -79,7 +79,7 @@
 <%--                    </a>--%>
 <%--                </div>--%>
                 <div style="background-color: #262630">
-                    <button style="font-weight: bolder; color: hotpink; font-style: normal" onclick="fecharAba()">
+                    <button style="font-weight: bolder; color: hotpink; font-style: normal" onclick="fecharAbaFeedback()">
                         OK
                     </button>
                 </div>
@@ -97,7 +97,7 @@
 
 </body>
 <script>
-    function fecharAba(){
-        window.close()
+    function fecharAbaFeedback(){
+        this.window.close()
     }
 </script>
