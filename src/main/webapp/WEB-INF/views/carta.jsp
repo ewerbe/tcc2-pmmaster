@@ -205,6 +205,15 @@
                     OK
                 </button>
             </div>
+            <p style="color: cornsilk; font-weight: bolder;">
+                *Caso a carta esteja travada, reinicie a partida no botão abaixo.
+            </p>>
+            <div style="background-color: #262630; margin-top: 10%; height: 10%; padding-top: 8%;" align="center">
+                <a style="font-weight: bolder; color: hotpink; font-style: normal; height: 10%; font-size: 24px;"
+                   href="/jogadas/finalizar-partida.action?id=${idTabuleiro}">
+                    REINICIAR PARTIDA
+                </a>
+            </div>
                     </div>
                     </c:when>
                     <c:otherwise>
