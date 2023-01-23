@@ -62,11 +62,15 @@ public class CartaController {
     public String verCarta(Model model, HttpServletRequest request,
                                     @RequestParam(value = "id") Long idCarta,
                                     @RequestParam(value = "fechar", required=false)
-                                       boolean fecharAternativas) {
+                                       boolean fecharAternativas,
+                                    @RequestParam(value = "idTabuleiro",
+                                            required = false)Long idTabuleiro) {
 //                                    @RequestParam(value = "idUsu")Long idUsu) {
         //Usuario usuario = usuarioService.find(idUsu);
         Carta carta = cartaService.find(idCarta);
-
+        if(idTabuleiro!=null) {
+            model.addAttribute("idTabuleiro", idTabuleiro);
+        }
         //model.addAttribute("usuario", usuario);
         model.addAttribute("fecharAternativas", fecharAternativas);
         model.addAttribute("idAreaConhecimentoCarta", carta.getAreaConhecimento().getId());

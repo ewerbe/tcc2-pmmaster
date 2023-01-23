@@ -46,7 +46,7 @@ public class JogadaController {
         //já tem jogada aberta no tabuleiro, entra direto na carta aberta. sem direito à resposta;
         if(jogadaAtual != null && jogadaAtual.getAtiva()) {
             boolean fechar = true;
-            return "redirect:/cartas/carta.action?id="+jogadaAtual.getIdCarta().getId()+"&&fechar=true";
+            return "redirect:/cartas/carta.action?id="+jogadaAtual.getIdCarta().getId()+"&fechar=true&id";
         } else {
             // jogadaAbertaAtual = abreJogada(idTabuleiro);
             //var para receber o idAreaConhecimento pela seleção do user;
@@ -112,6 +112,30 @@ public class JogadaController {
         return "redirect:/";
     }
 
+    @RequestMapping(value = "/jogadas/reiniciar-partida.action", method = RequestMethod.GET)
+    public String reiniciarPartidaParaTabuleiro(Model model,
+//                                                @RequestParam(value = "id", required = false)
+//                                                        Long idJogadaAtual,
+                                                @RequestParam(value = "id", required = false)
+                                                        Long idTabuleiro){
+        Tabuleiro tabuleiro;
+
+        tabuleiro = tabuleiroService.find(idTabuleiro);
+        // }
+        List<Jogada> jogadasTabuleiro = jogadaService.findJogadaByTabuleiro(tabuleiro);
+        //passa todas as jogadas para a antiguidade do tabuleiro;
+        //para não influenciar na cartas abertas na partida atual do tabuleiro.
+        for(Jogada jogada : jogadasTabuleiro) {
+            jogada.setAntiga(true);
+            jogada.setAtiva(false);
+            jogadaService.save(jogada);
+        }
+        //desativando o tabuleiro para finalizar a partida atual.
+        tabuleiro.setAtivo(false);
+        tabuleiroService.save(tabuleiro);
+        //jogadaService.save(jogadaAtual);
+        return "redirect:/";
+    }
 
     //////////////////////////////
 
