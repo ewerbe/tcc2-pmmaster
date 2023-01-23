@@ -17,7 +17,7 @@
     <c:choose>
         <c:when test="${resultado}">
             <div align="center">
-                <h3 style="color: black; top: 20%;">
+                <h3 style="color: cornsilk; top: 20%;">
                     Resposta CERTA!
                 </h3>
                 <p style="color: cornsilk">Pegue sua ficha de pontuação da Área de Conhecimento correspondente!</p>
@@ -28,7 +28,7 @@
 
         <c:otherwise>
             <div align="center">
-                <h3 style="color: hotpink;">
+                <h3 style="color: cornsilk;">
                     Resposta ERRADA!
                 </h3>
                 <h4>
